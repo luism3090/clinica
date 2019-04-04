@@ -308,10 +308,109 @@
                  </div>
 
 
+                 <div class="row">
+
+                         <div class="col-xs-12">
+
+                             <div class="form-group">
+
+                                 <label for="nombre">Lugar de residencia:</label>
+
+                             </div> 
+
+                      </div>
+
+                 </div> 
 
 
+                 <div class="row contInfoLugarResidencia">
+
+                           <div class='acompanante'>
+
+                                     <div class="col-md-4">
+
+                                         <div class="form-group">
+
+                                             <input type="text" class="form-control" id="txtLocalidadResidencia" name="txtLocalidadResidencia" placeholder="Localidad">
+
+                                         </div>
+
+                                     </div>  
+
+                                      <div class="col-md-4">
+
+                                             <div class="form-group">
+
+                                                  <input type="text" class="form-control" id="txtMunicipioResidencia" name="txtMunicipioResidencia" placeholder="Municipio">
+                                                 
+                                             </div>
+
+                                     </div>
+
+                                     <div class="col-md-4">
+
+                                         <div class="form-group">
+                                                 
+                                              <input type="text" class="form-control" id="txtEstadoResidencia" name="txtEstadoResidencia" placeholder="Estado">                                             
+
+                                         </div>
+
+                                     </div>
 
 
+                           </div>
+
+                 </div>
+
+
+                 <div class="row contInfoLugarResidencia">
+
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+
+                                                <input type="text" class="form-control" id="txtColoniaResidencia" name="txtColoniaResidencia" placeholder="Colonia" >
+
+                                         </div>
+
+
+                                     </div>  
+
+                                      <div class="col-md-3">
+
+                                             <div class="form-group">
+
+                                                  <input type="text" class="form-control" id="txtCalleResidencia" name="txtCalleResidencia" placeholder="Calle" >
+                                                 
+                                             </div>
+
+                                     </div>
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+                                                 
+                                              <input type="text" class="form-control" id="txtNumeroExterior" name="txtNumeroExterior" placeholder="Número Exterior" >
+
+                                         </div>
+
+                                     </div>
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+                                                 
+                                              <input type="text" class="form-control" id="txtNumeroInterior" name="txtNumeroInterior" placeholder="Número Interior">
+
+                                         </div>
+
+                                     </div>
+
+
+                           
+
+                 </div>
 
 
 
@@ -326,42 +425,28 @@
  <br><br>
               
 
-<div class="col-md-12 form-group">
-                        <label for="nombre">Lugar de residencia</label>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" id="localidad" name="localidadResidencia" placeholder="Localidad" required>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" id="municipio" name="municipioResidencia" placeholder="Municipio" required>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" id="estado" name="estadoResidencia" placeholder="Estado" required>
-                            </div>
-                             </div>
-                    </div>
-
+<!-- 
 <div class="col-md-12 form-group">
                         
-                        <div class="row">
-                            <div class="col-md-4 form-group">
-                        
-                        <input type="text" class="form-control" id="colonia" name="col" placeholder="Colonia" required>
-                    </div>
-                    <div class="col-md-4 form-group">
-                        
-                        <input type="text" class="form-control" id="calle" name="calle" placeholder="Calle" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        
-                        <input type="text" class="form-control" id="ext" name="numExt" placeholder="Num Exterior" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        
-                        <input type="text" class="form-control" id="int" name="numInt" placeholder="Num Interior" required>
-                    </div>
-                </div>
-                             </div>
+          <div class="row">
+                  <div class="col-md-4 form-group">
+              
+              <input type="text" class="form-control" id="colonia" name="col" placeholder="Colonia" required>
+          </div>
+          <div class="col-md-4 form-group">
+              
+              <input type="text" class="form-control" id="calle" name="calle" placeholder="Calle" required>
+          </div>
+          <div class="col-md-2 form-group">
+              
+              <input type="text" class="form-control" id="ext" name="numExt" placeholder="Num Exterior" required>
+          </div>
+          <div class="col-md-2 form-group">
+              
+              <input type="text" class="form-control" id="int" name="numInt" placeholder="Num Interior" required>
+          </div>
+      </div>
+</div>
                     
 
 <div class="form-group col-md-6">
@@ -400,16 +485,16 @@
 
 
 
-<div class="form-group col-md-6">
-                        <label for="InputTel_movil">Teléfono celular </label>
-                        <input type="text" class="form-control" id="InputTelMovil" name="telCelular" required>
-                        </div>
+    <div class="form-group col-md-6">
+          <label for="InputTel_movil">Teléfono celular </label>
+          <input type="text" class="form-control" id="InputTelMovil" name="telCelular" required>
+    </div>
 
                 
-                 <div class="form-group col-md-6 " >
-                        <label for="InputTel_casa">Teléfono casa </label>
-                  <input type="text" class="form-control" id="TelFijo" name="telCasa" required>
-                        </div>
+    <div class="form-group col-md-6 " >
+          <label for="InputTel_casa">Teléfono casa </label>
+          <input type="text" class="form-control" id="TelFijo" name="telCasa" required>
+    </div>
                      
                         
                   
@@ -485,10 +570,9 @@
 	<label for="MedicoTratante">Médico tratante</label>
                         <input type="text" class="form-control" id="meditratan" name="medicoTratante" required>
 </div>
--->
 
   
-
+ -->
 
 
 
