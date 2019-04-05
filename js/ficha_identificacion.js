@@ -46,7 +46,13 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    regexp: {
+                            regexp: /^\d{4}-\d{2}-\d{2}$/,
+
+                            message: 'La fecha no tiene un formato correcto',
+
+                        }
 
 	                }
 	            }
@@ -66,7 +72,11 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    stringLength: {
+                        	 max: 50,
+                        	 message: '50 caracteres como máximo'
+                    	}
 
 	                }
 	            }
@@ -77,6 +87,11 @@ $(document).on('ready',function()
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
 	                    }
+	                    ,
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 
 	                }
 	            }
@@ -87,6 +102,11 @@ $(document).on('ready',function()
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
 	                    }
+	                    ,
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 
 	                }
 	            }
@@ -97,6 +117,11 @@ $(document).on('ready',function()
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
 	                    }
+	                    ,
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 
 	                }
 	            }
@@ -106,7 +131,11 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 
 	                }
 	            }
@@ -116,7 +145,11 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 
 	                }
 	            }
@@ -126,7 +159,11 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 
 
 	                }
@@ -137,7 +174,12 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    regexp: {
+                            regexp: /^\d{4}-\d{2}-\d{2}$/,
+                            message: 'La fecha no tiene un formato correcto',
+
+                        }
 
 	                }
 	            }
@@ -147,6 +189,12 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
+	                    },
+	                    regexp: {
+	                        regexp: /^[0-9.]+$/,
+
+	                        message: 'Solo debe ingresar números',
+
 	                    }
 	                }
 	            }
@@ -176,7 +224,11 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    stringLength: {
+                        	max: 100,
+                        	message: '100 caracteres como máximo'
+                    	}
 
 	                }
 	            }
@@ -187,6 +239,11 @@ $(document).on('ready',function()
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
 	                    }
+	                    ,
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 
 	                }
 	            }
@@ -196,7 +253,11 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 	                }
 	            }
 	            ,
@@ -205,7 +266,11 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 
 	                }
 	            }
@@ -215,7 +280,11 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 
 	                }
 	            }
@@ -225,7 +294,11 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 	                }
 	            }
 	            ,
@@ -234,18 +307,134 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    }
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
 
 	                }
 	            }
 	            ,
 	            txtNumeroInterior: {
-	            	enabled: false,
 	                group: '.form-group',
 	                validators: {
+	                    /*notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    },*/
 	                    stringLength: {
-                        max: 15
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
                     	}
+	                }
+	            }
+	            ,
+	            slEscolaridad: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    }
+
+	                }
+	            },
+	             txtCarrera: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
+
+	                }
+	            }
+	            ,
+	             txtOcupacion: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
+
+	                }
+	            }
+	            ,
+	             txtReligion: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    },
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
+
+	                }
+	            }
+	            ,
+	             txtCelular: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    },
+	                    regexp: {
+	                        regexp: /^[0-9.]+$/,
+
+	                        message: 'Solo debe ingresar números',
+
+	                    },
+	                    stringLength: {
+                        	max: 10,
+                        	min: 10,
+                        	message: 'El número de celular consta de 10 dígitos'
+                    	}
+
+	                }
+	            }
+	            ,
+	             txtTelefono: {
+	                group: '.form-group',
+	                validators: {
+	                    // notEmpty: {
+	                    //     message: 'Este campo es requerido'
+	                    // },
+	                    regexp: {
+	                        regexp: /^[0-9.]+$/,
+
+	                        message: 'Solo debe ingresar números',
+
+	                    },
+	                    stringLength: {
+                        	max: 10,
+                        	min: 10,
+                        	message: 'El número de teléfono consta de 10 dígitos'
+                    	}
+
+	                }
+	            },
+	             txtEmail: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    },
+		                   emailAddress: {
+	                        message: 'La dirección de correo electrónico ingresada no es correcta'
+                    	},
+	                    stringLength: {
+                        	max: 50,
+                        	message: '50 caracteres como máximo'
+                    	}
+
 	                }
 	            }
 	           
@@ -255,7 +444,69 @@ $(document).on('ready',function()
 
 			e.preventDefault();
 
-			alert();
+			let datosFichaIdentificacion = {
+											 fecha_hora_elaboracion: $("#txtFechaHoraElab").val(),
+											 tipo_interrogatorio: $("#slTipoInterrogatorio").val(),
+											 nombre_acompanante: $("#txtNombrePaciente").val(),
+											 ape_paterno_acompanante: $("#txtApePaternoAcompanante").val(),
+											 ape_materno_acompanante: $("#txtApeMaternoAcompanante").val(),
+											 parentesco_acompanante: $("#txtParentescoAcompanante").val(),
+											 estado_civil: $("#slEdoCivil").val(),
+											 lugar_origen: $("#txtLugarOrigen").val(),
+											 localidad_residencia: $("#txtLocalidadResidencia").val(),
+											 municipio_residencia: $("#txtMunicipioResidencia").val(),
+											 estado_residencia: $("#txtEstadoResidencia").val(),
+											 colonia_residencia: $("#txtColoniaResidencia").val(),
+											 calle_residencia: $("#txtCalleResidencia").val(),
+											 num_exterior: $("#txtNumeroExterior").val(),
+											 num_interior: $("#txtNumeroInterior").val(),
+											 escolaridad: $("#slEscolaridad").val(),
+											 carrera: $("#txtCarrera").val(),
+											 ocupacion: $("#txtOcupacion").val(),
+											 religion: $("#txtReligion").val(),
+											 tel_movil: $("#txtCelular").val(),
+											 tel_casa: $("#txtTelefono").val(),
+											 correo_electronico: $("#txtEmail").val()
+											}
+
+
+
+			let datosPaciente = {
+
+				  
+				  nombre: $("#txtNombrePaciente").val(),
+				  ape_paterno: $("#txtApePaterno").val(),
+				  ape_materno: $("#txtApeMaterno").val(),
+				  genero: $("#slGenero").val(),
+				  fecha_nacimiento: $("#txtFechaNacimiento").val(),
+				  edad: $("#txtEdad").val()
+				  
+
+			}
+
+			// console.log(datosFichaIdentificacion);
+			// console.log(datosPaciente);
+
+			$.ajax(
+               {
+	               type: "POST",
+	               url: "guardarFicha.php",
+	               data:{datosFichaIdentificacion:datosFichaIdentificacion,datosPaciente:datosPaciente} ,
+	               async: true,
+	               success: function(result)
+	               {              
+	               	  console.log(result);
+	               },
+	               error:function(result)
+	               {
+	                    console.log(result.responseText);
+	                    //$("#error").html(data.responseText); 
+	               }
+          
+           });
+
+
+				
 
 			/*
 
@@ -327,23 +578,7 @@ $(document).on('ready',function()
 
 	}
 
-
-	$("#btnEnviar2").on("click",function(){
-
-		$.ajax({
-            type: "POST",
-            data:{dato: "algo"},
-            url:"guardarFicha.php",
-            async: true,
-            success: function(data){
-                console.log(data);
-            }
-        });
-
-	})
-
-	 
-
+	
 
 /*
 	$.ajax(

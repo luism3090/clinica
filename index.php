@@ -109,8 +109,8 @@
                                    <label for="slTipoInterrogatorio">Tipo de interrogatorio</label>
                                    <select id="slTipoInterrogatorio" class="form-control" name="slTipoInterrogatorio" required>
                                          <option selected disabled="">Elija una opción</option>
-                                         <option value="1">Directo</option>
-                                         <option value="2">Indirecto</option>
+                                         <option value="Directo">Directo</option>
+                                         <option value="Indirecto">Indirecto</option>
                                    </select>
 
                            </div>
@@ -145,7 +145,7 @@
                                          <div class="form-group">
 
                                              
-                                             <input type="text" class="form-control" id="txtNombreAcompanante" name="txtNombreAcompanante" placeholder="Nombre(s)">
+                                             <input type="text" class="form-control" id="txtNombreAcompanante" name="txtNombreAcompanante" placeholder="Nombre(s)" maxlength="50">
 
                                          </div>
 
@@ -155,7 +155,7 @@
 
                                              <div class="form-group">
 
-                                                   <input type="text" class="form-control" id="txtApePaternoAcompanante" name="txtApePaternoAcompanante" placeholder="Apellido paterno">
+                                                   <input type="text" class="form-control" id="txtApePaternoAcompanante" name="txtApePaternoAcompanante" placeholder="Apellido paterno" maxlength="50">
                                                  
                                              </div>
 
@@ -165,7 +165,7 @@
 
                                          <div class="form-group">
                                                  
-                                                <input type="text" class="form-control" id="txtApeMaternoAcompanante" name="txtApeMaternoAcompanante" placeholder="Apellido materno">
+                                                <input type="text" class="form-control" id="txtApeMaternoAcompanante" name="txtApeMaternoAcompanante" placeholder="Apellido materno" maxlength="50">
                                              
                                          </div>
 
@@ -175,7 +175,7 @@
 
                                              <div class="form-group">
                                                      
-                                                    <input type="text" class="form-control" id="txtParentescoAcompanante" name="txtParentescoAcompanante" placeholder="Parentesco">
+                                                    <input type="text" class="form-control" id="txtParentescoAcompanante" name="txtParentescoAcompanante" placeholder="Parentesco" maxlength="40">
                                                  
                                              </div>
 
@@ -196,7 +196,7 @@
                                  <div class="form-group">
 
                                      <label for="txtNombrePaciente">Nombre Paciente:</label>
-                                     <input type="text" class="form-control" id="txtNombrePaciente" name="txtNombrePaciente" placeholder="Nombre">
+                                     <input type="text" class="form-control" id="txtNombrePaciente" name="txtNombrePaciente" placeholder="Nombre" maxlength="50">
 
                                  </div>
 
@@ -207,7 +207,7 @@
                                 <div class="form-group">
 
                                        <label for="txtApePaterno">Apellido paterno:</label>
-                                      <input type="text" class="form-control" id="txtApePaterno" name="txtApePaterno" placeholder="Apellido paterno">
+                                      <input type="text" class="form-control" id="txtApePaterno" name="txtApePaterno" placeholder="Apellido paterno" maxlength="50">
                                     
                                 </div>
 
@@ -218,7 +218,7 @@
                                  <div class="form-group">
                                         
                                         <label for="txtApeMaterno">Apellido materno:</label>
-                                        <input type="text" class="form-control" id="txtApeMaterno" name="txtApeMaterno" placeholder="Apellido materno">
+                                        <input type="text" class="form-control" id="txtApeMaterno" name="txtApeMaterno" placeholder="Apellido materno" maxlength="50">
                                      
                                  </div>
 
@@ -260,9 +260,9 @@
                                           <label for="slGenero">Género</label>
                                           <select id="slGenero" class="form-control" name="slGenero" >
                                                   <option selected disabled>Elija una opción</option>
-                                                  <option value="1">Hombre</option>
-                                                  <option value="2">Mujer</option>
-                                                  <option value="3">Otro</option>
+                                                  <option value="Hombre">Hombre</option>
+                                                  <option value="Mujer">Mujer</option>
+                                                  <option value="Otro">Otro</option>
                                           </select>
                                    </div>
 
@@ -282,11 +282,11 @@
 
                                       <select id="slEdoCivil" class="form-control" name="slEdoCivil" required>
                                            <option selected disabled="">Elija una opción</option>
-                                           <option value="1">Soltero(a)</option>
-                                           <option value="2">Casado(a)</option>
-                                           <option value="3">Unión libre</option>
-                                           <option value="4">Divorciado</option>
-                                           <option value="5">Viudo(a)</option>
+                                           <option value="Soltero(a)">Soltero(a)</option>
+                                           <option value="Casado(a)">Casado(a)</option>
+                                           <option value="Unión libre">Unión libre</option>
+                                           <option value="Divorciado">Divorciado</option>
+                                           <option value="Viudo(a)">Viudo(a)</option>
                                       </select>
 
                              </div>
@@ -298,7 +298,7 @@
                              <div class="form-group">
 
                                    <label for="txtLugarOrigen">Lugar de origen</label>
-                                   <input type="text" class="form-control" id="txtLugarOrigen" name="txtLugarOrigen"  placeholder="localidad,Municipio,Estado" >
+                                   <input type="text" class="form-control" id="txtLugarOrigen" name="txtLugarOrigen"  placeholder="localidad,Municipio,Estado" maxlength="100" >
 
                            </div>
 
@@ -331,7 +331,7 @@
 
                                          <div class="form-group">
 
-                                             <input type="text" class="form-control" id="txtLocalidadResidencia" name="txtLocalidadResidencia" placeholder="Localidad">
+                                             <input type="text" class="form-control" id="txtLocalidadResidencia" name="txtLocalidadResidencia" placeholder="Localidad" maxlength="50">
 
                                          </div>
 
@@ -341,7 +341,7 @@
 
                                              <div class="form-group">
 
-                                                  <input type="text" class="form-control" id="txtMunicipioResidencia" name="txtMunicipioResidencia" placeholder="Municipio">
+                                                  <input type="text" class="form-control" id="txtMunicipioResidencia" name="txtMunicipioResidencia" placeholder="Municipio" maxlength="50">
                                                  
                                              </div>
 
@@ -351,7 +351,7 @@
 
                                          <div class="form-group">
                                                  
-                                              <input type="text" class="form-control" id="txtEstadoResidencia" name="txtEstadoResidencia" placeholder="Estado">                                             
+                                              <input type="text" class="form-control" id="txtEstadoResidencia" name="txtEstadoResidencia" placeholder="Estado" maxlength="50">                                             
 
                                          </div>
 
@@ -370,7 +370,7 @@
 
                                          <div class="form-group">
 
-                                                <input type="text" class="form-control" id="txtColoniaResidencia" name="txtColoniaResidencia" placeholder="Colonia" >
+                                                <input type="text" class="form-control" id="txtColoniaResidencia" name="txtColoniaResidencia" placeholder="Colonia" maxlength="50">
 
                                          </div>
 
@@ -381,7 +381,7 @@
 
                                              <div class="form-group">
 
-                                                  <input type="text" class="form-control" id="txtCalleResidencia" name="txtCalleResidencia" placeholder="Calle" >
+                                                  <input type="text" class="form-control" id="txtCalleResidencia" name="txtCalleResidencia" placeholder="Calle" maxlength="50">
                                                  
                                              </div>
 
@@ -391,7 +391,7 @@
 
                                          <div class="form-group">
                                                  
-                                              <input type="text" class="form-control" id="txtNumeroExterior" name="txtNumeroExterior" placeholder="Número Exterior" >
+                                              <input type="text" class="form-control" id="txtNumeroExterior" name="txtNumeroExterior" placeholder="Número Exterior" maxlength="50">
 
                                          </div>
 
@@ -401,16 +401,120 @@
 
                                          <div class="form-group">
                                                  
-                                              <input type="text" class="form-control" id="txtNumeroInterior" name="txtNumeroInterior" placeholder="Número Interior">
+                                              <input type="text" class="form-control" id="txtNumeroInterior" name="txtNumeroInterior" placeholder="Número Interior" maxlength="50">
 
                                          </div>
 
                                      </div>
 
+                 </div>
 
-                           
+
+
+                 <div class="row contInfoEscolaridad">        
+
+                            
+                        <div class="col-md-4">
+
+                                 <div class="form-group">
+
+                                     <label for="slEscolaridad">Escolaridad</label>
+                                     <select id="slEscolaridad" class="form-control" name="slEscolaridad" >
+                                          <option selected disabled>Elija una opción</option>
+                                          <option value="Ninguna">Ninguna</option>
+                                          <option value="Primaria">Primaria</option>
+                                          <option value="Secundaria">Secundaria</option>
+                                          <option value="Preparatoria o Bachillerato">Preparatoria o Bachillerato</option>
+                                          <option value="Universidad">Universidad</option>
+                                          <option value="Carrera técnica">Carrera técnica</option>
+                                          <option value="Carrera universitaria">Carrera universitaria</option>
+                                          <option value="Maestría">Maestría</option>
+                                          <option value="Doctorado">Doctorado</option>
+                                          <option value="Otro posgrado">Otro posgrado</option>
+                                     </select>
+
+                                 </div>
+
+                        </div>  
+
+                         <div class="col-md-4">
+
+                                <div class="form-group">
+
+                                        <label for="txtCarrera">Carrera</label>
+                                        <input type="text" class="form-control" id="txtCarrera" name="txtCarrera"  placeholder="Nombre de Carrera universitaria" maxlength="50">                                  
+
+                                </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                                  <div class="form-group">
+                                        
+                                         <label for="txtOcupacion">Ocupación</label>
+                                         <input type="text" class="form-control" id="txtOcupacion" name="txtOcupacion" maxlength="50" placeholder="Ocupación">
+
+                                   </div>
+
+                        </div>
+
 
                  </div>
+
+                 <div class="row contInfoEscolaridad">        
+
+                            
+                        <div class="col-md-4">
+
+                                 <div class="form-group">
+
+                                     <label for="txtReligion">Religión</label>
+                                     <input type="text" class="form-control" id="txtReligion" name="txtReligion" maxlength="50" placeholder="Religión">
+
+                                 </div>
+
+                        </div>  
+
+                         <div class="col-md-4">
+
+                                <div class="form-group">
+
+                                        <label for="txtCelular">Teléfono celular</label>
+                                        <input type="text" class="form-control" id="txtCelular" name="txtCelular" maxlength="10" placeholder="Teléfono celular">
+
+                                </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                                  <div class="form-group">
+                                        
+                                         <label for="txtTelefono">Teléfono casa </label>
+                                         <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" maxlength="10" placeholder="Teléfono casa">
+
+                                   </div>
+
+                        </div>
+
+
+                 </div>
+
+                 <div class="row contInfoId">
+
+                              <div class="col-xs-12">
+                                   
+                                   <div class="form-group">
+
+                                          <label for="txtEmail">Email</label>
+                                          <input type="email" class="form-control" id="txtEmail" placeholder="Correo electrónico" name="txtEmail" maxlength="50">
+
+                                   </div>  
+
+                             </div>
+
+                </div>
 
 
 
@@ -426,76 +530,6 @@
               
 
 <!-- 
-<div class="col-md-12 form-group">
-                        
-          <div class="row">
-                  <div class="col-md-4 form-group">
-              
-              <input type="text" class="form-control" id="colonia" name="col" placeholder="Colonia" required>
-          </div>
-          <div class="col-md-4 form-group">
-              
-              <input type="text" class="form-control" id="calle" name="calle" placeholder="Calle" required>
-          </div>
-          <div class="col-md-2 form-group">
-              
-              <input type="text" class="form-control" id="ext" name="numExt" placeholder="Num Exterior" required>
-          </div>
-          <div class="col-md-2 form-group">
-              
-              <input type="text" class="form-control" id="int" name="numInt" placeholder="Num Interior" required>
-          </div>
-      </div>
-</div>
-                    
-
-<div class="form-group col-md-6">
-      <label for="Escolaridad">Escolaridad</label>
-      <select id="inputEscolaridad" class="form-control" name="escolaridad" required>
-        <option selected>Elija una opción</option>
-        <option value="1">Ninguna</option>
-      <option value="2">Primaria</option>
-      <option value="3">Secundaria</option>
-      <option value="4">Preparatoria o Bachillerato</option>
-      <option value="5">Universidad</option>
-      <option value="6">Carrera técnica</option>
-      <option value="7">Carrera universitaria</option>
-      <option value="8">Maestría</option>
-      <option value="9">Doctorado</option>
-      <option value="10">Otro posgrado</option>
-      </select>
-</div>
-                      
-<div class="form-group col-md-6">
-      <label for="inputCarrera">Carrera</label>
-      <input type="text" class="form-control" id="inputCarrera" name="carrera"  placeholder="Nombre de Carrera universitaria" required>
-    </div>
-
-
-    <div class="form-group col-md-6">
-      <label for="inputOcupacion">Ocupación</label>
-      <input type="text" class="form-control" id="inputOcupacion" name="ocupacion" required>
-    </div>
-
-<div class="form-group col-md-6">
-      <label for="inputReligion">Religión</label>
-      <input type="text" class="form-control" id="inputReligion" name="religion" required>
-    </div>
-
-
-
-
-    <div class="form-group col-md-6">
-          <label for="InputTel_movil">Teléfono celular </label>
-          <input type="text" class="form-control" id="InputTelMovil" name="telCelular" required>
-    </div>
-
-                
-    <div class="form-group col-md-6 " >
-          <label for="InputTel_casa">Teléfono casa </label>
-          <input type="text" class="form-control" id="TelFijo" name="telCasa" required>
-    </div>
-                     
                         
                   
     <div class="form-group col-md-12">
