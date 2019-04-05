@@ -33,6 +33,10 @@ $(document).on('ready',function()
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
 	                    },
+	                    stringLength: {
+                            max: 13,
+                             message: 'El RFC esta compuesto de solo 13 caractéres'
+                        }
 
 	                }
 	            }
@@ -42,7 +46,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -52,7 +56,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -62,7 +66,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -72,7 +76,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -82,7 +86,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -92,7 +96,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -102,7 +106,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -112,7 +116,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -122,7 +126,8 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
+
 
 	                }
 	            }
@@ -132,7 +137,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -142,8 +147,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
-
+	                    }
 	                }
 	            }
 	            ,
@@ -152,7 +156,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -162,7 +166,7 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
 	                }
 	            }
@@ -172,8 +176,76 @@ $(document).on('ready',function()
 	                validators: {
 	                    notEmpty: {
 	                        message: 'Este campo es requerido'
-	                    },
+	                    }
 
+	                }
+	            }
+	            ,
+	            txtLocalidadResidencia: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    }
+
+	                }
+	            }
+	            ,
+	            txtMunicipioResidencia: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    }
+	                }
+	            }
+	            ,
+	            txtEstadoResidencia: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    }
+
+	                }
+	            }
+	            ,
+	            txtColoniaResidencia: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    }
+
+	                }
+	            }
+	            ,
+	            txtCalleResidencia: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    }
+	                }
+	            }
+	            ,
+	            txtNumeroExterior: {
+	                group: '.form-group',
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Este campo es requerido'
+	                    }
+
+	                }
+	            }
+	            ,
+	            txtNumeroInterior: {
+	            	enabled: false,
+	                group: '.form-group',
+	                validators: {
+	                    stringLength: {
+                        max: 15
+                    	}
 	                }
 	            }
 	           

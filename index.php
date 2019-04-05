@@ -79,7 +79,7 @@
                                    <div class="form-group">
 
                                           <label for="txtIdPaciente">Id paciente</label>
-                                          <input type="text" class="form-control" id="txtIdPaciente" name="txtIdPaciente" placeholder="Id de paciente">
+                                          <input type="text" class="form-control" id="txtIdPaciente" name="txtIdPaciente" placeholder="Id de paciente" maxlength="13">
                                           <small id="IdHelpBlock" class="form-text text-muted">
                                           RFC (Escriba todo junto y en mayúsculas: las primeras 2 letras del apellido paterno, primer letra del apellido materno, primer letra del nombre, ultimos 2 digitos del año de nacimiento, dos digitos del mes, dos digitos del dia. Ejemplo: RERS950225)
                                           </small>
