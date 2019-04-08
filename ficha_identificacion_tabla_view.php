@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
      <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.min.css">
-     <link rel="stylesheet" href="css/tabla_ficha_identificacion.css"> 
+     <link rel="stylesheet" href="css/ficha_identificacion_tabla_view.css"> 
 
 
     <title>Inicio_enf</title>
@@ -26,10 +26,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="tabla_ficha_identificacion.php">Inicio<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="ficha_identificacion_tabla_view.php">Inicio<span class="sr-only">(current)</span></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="ficha_identificacion.php">Crear ficha <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="ficha_identificacion_view.php">Crear ficha <span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item">
@@ -107,7 +107,7 @@
 
     <script src="libreriasJS/jquery.dataTables.min.js"></script>
      <script src="libreriasJS/dataTables.bootstrap.min.js"></script>
-     <script src="js/tabla_ficha_identificacion.js"></script>
+     <script src="js/ficha_identificacion_tabla_view.js"></script>
  
 
 

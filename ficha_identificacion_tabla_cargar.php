@@ -2,16 +2,6 @@
 
 include 'conexion.php';
 
-
-// echo $_REQUEST;
-
-//  echo json_encode($_REQUEST);
-
-
-// exit();
-
-
-
 		$requestData= $_REQUEST;
 
 					$columna = $requestData['order'][0]["column"]+1;
@@ -115,16 +105,16 @@ include 'conexion.php';
 							//foreach ($query->result_array() as $row)
 							while ($row = mysqli_fetch_array($query))
 							{ 
-								$nestedData=array(	$row["rfc"],
-													$row["paciente"],
-													$row["edad"],
-													$row["fecha"],
-													$row["municipio"],
-													$row["direccion"],
-													$row["telefono_casa"],
-													$row["telefono_movil"],
-													$row["medico"],
-													$row["historia"]
+								$nestedData=array(	utf8_encode($row["rfc"]),
+													utf8_encode($row["paciente"]),
+													utf8_encode($row["edad"]),
+													utf8_encode($row["fecha"]),
+													utf8_encode($row["municipio"]),
+													utf8_encode($row["direccion"]),
+													utf8_encode($row["telefono_casa"]),
+													utf8_encode($row["telefono_movil"]),
+													utf8_encode($row["medico"]),
+													utf8_encode($row["historia"])
 												 );
 
 								$data[] = $nestedData;

@@ -12,7 +12,7 @@ $(document).on('ready',function()
                             "scrollY":        "500px",
                             "scrollCollapse": true,
                   "ajax":{
-                    url : "cargar_tabla_ficha_identificacion.php", 
+                    url : "ficha_identificacion_tabla_cargar.php", 
                     type: "post",  
                     error: function(d){ 
                     	

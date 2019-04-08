@@ -437,6 +437,173 @@ $(document).on('ready',function()
 
 		                }
 		            }
+		            ,
+		             txtPeso: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtTalla: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtIMC: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtTenArterial: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtFrecCardiaca: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtFrecRespiratoria: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtAbdomen: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtCadera: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtICC: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtSpO2: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtGLIC: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            },
+		             txtTemperatura: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    },
+		                    stringLength: {
+	                        	max: 10,
+	                        	message: '10 caracteres como máximo'
+	                    	}
+
+		                }
+		            }
+		            ,
+		             slMedicoTratante: {
+		                group: '.form-group',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'Este campo es requerido'
+		                    }
+
+		                }
+		            }
 		           
 		        }
 		    }).on('success.form.bv', function (e) 
@@ -490,7 +657,7 @@ $(document).on('ready',function()
 				$.ajax(
 	               {
 		               type: "POST",
-		               url: "guardar_ficha.php",
+		               url: "ficha_identificacion_guardar.php",
 		               data:{datosFichaIdentificacion:datosFichaIdentificacion,datosPaciente:datosPaciente} ,
 		               async: true,
 		               success: function(result)
@@ -600,5 +767,54 @@ $(document).on('ready',function()
 
 	    return edad;
 	}
+
+
+	function cargarSelectMedicoTratante()
+	{
+
+		$.ajax(
+	    {
+	      
+	      type: "POST",
+	      url: "cargarSelectMedicoTratante.php",
+	      dataType:"json",
+	      data: '',
+	      async: true,
+	        success: function(result)
+	            {
+
+    	                if(result.registros > 0)
+    	                {
+    	                   let options ="<option selected disabled >Elija una opción</option>";
+    	                   result.resultado.forEach(function(elemento,index) 
+    	                   {
+    	  
+    	                       options += '<option value="'+elemento.id_medico+'">'+elemento.medico+'</option>';
+    	                      
+    	                  });
+
+    	                   	$("#slMedicoTratante").html(options);
+
+    	                }
+    	                else
+    	                {
+    	                	$("#modalAlerta .modal-body").html("No se encontraron datos disponibles");
+    						$("#modalAlerta").modal("show");
+    	                }
+                    
+
+	                
+	              
+	            },
+	       error:function(result)
+	          {
+	           console.log(result);
+	            
+	          }
+	   });
+
+
+	}
+	cargarSelectMedicoTratante();
 
 });

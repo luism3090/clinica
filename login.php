@@ -2,16 +2,21 @@
 
 include 'conexion.php';
 
-$usuario=$_POST['datos']["usuario"];
+$usuario= $_POST['datos']["usuario"];
 $contrasena=$_POST['datos']["contrasena"];
+
+
+// echo json_encode($usuario); 
+
+// exit();
 
 
 //Sentencia SQL para buscar un usuario con esos datos 
 $query = " select * from usuarios where nombre_usuario='".$usuario."' and password='".$contrasena."'"; 
 
-//echo $ssql;
+//echo $query;
 
-//exit();
+// exit();
 
 //Ejecuto la sentencia 
 $resul = mysqli_query($conexion,$query); 

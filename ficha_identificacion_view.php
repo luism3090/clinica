@@ -12,7 +12,7 @@
    <!--  <link rel="stylesheet" href="css/bootstrap.min.css">-->
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/ficha_identificacion.css">
+    <link rel="stylesheet" href="css/ficha_identificacion_view.css">
     
 
     <title>Ficha</title>
@@ -29,10 +29,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="tabla_ficha_identificacion.php">Inicio<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="ficha_identificacion_tabla_view.php">Inicio<span class="sr-only">(current)</span></a>
       </li>
        <li class="nav-item active">
-        <a class="nav-link" href="ficha_identificacion.php">Crear ficha <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="ficha_identificacion_view.php">Crear ficha <span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item">
@@ -77,7 +77,7 @@
                 </div>
 
 
-                 <div class="row">
+                 <div class="row contInfoFecha">
                          
                        <div class="col-xs-6">
                              
@@ -487,7 +487,7 @@
 
                  </div>
 
-                 <div class="row contInfoId">
+                 <div class="row contInfoEmail">
 
                               <div class="col-xs-12">
                                    
@@ -502,6 +502,188 @@
 
                 </div>
 
+                <br>
+        
+                 <div class="row">
+
+                         <div class="col-xs-12">
+
+                             <div class="form-group">
+
+                                 <label for="nombre">Signos vitales:</label>
+
+                             </div> 
+
+                      </div>
+
+                 </div> 
+
+                 <div class="row contInfoSignosVitales1">
+
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+
+                                               <label for="txtPeso">Peso</label>
+                                              <input type="text" class="form-control" id="txtPeso" name="txtPeso" placeholder="Peso" maxlength="10" >
+
+                                         </div>
+
+
+                                     </div>  
+
+                                      <div class="col-md-3">
+
+                                             <div class="form-group">
+
+                                                  <label for="txtTalla">Talla</label>
+                                                 <input type="text" class="form-control" id="txtTalla" name="txtTalla" placeholder="Talla" maxlength="10" >
+
+                                             </div>
+
+                                     </div>
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+                                                 
+                                             <label for="txtIMC">IMC</label>
+                                            <input type="text" class="form-control" id="txtIMC" name="txtIMC" placeholder="IMC" maxlength="10">
+
+                                         </div>
+
+                                     </div>
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+                                            
+                                            <label for="txtTenArterial">T/A</label>
+                                            <input type="text" class="form-control" id="txtTenArterial" name="txtTenArterial" placeholder="T/A" maxlength="10">
+                                              
+                                         </div>
+
+                                     </div>
+
+                 </div>
+
+                 <div class="row contInfoSignosVitales2">
+
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+
+                                               <label for="txtFrecCardiaca">FC</label>
+                                               <input type="text" class="form-control" id="txtFrecCardiaca" name="txtFrecCardiaca" placeholder='FC' maxlength="10" >
+
+                                         </div>
+
+
+                                     </div>  
+
+                                      <div class="col-md-3">
+
+                                             <div class="form-group">
+
+                                                   <label for="txtFrecRespiratoria">FR</label>
+                                                   <input type="text" class="form-control" id="txtFrecRespiratoria" name="txtFrecRespiratoria" placeholder='FR' maxlength="10" >
+
+                                             </div>
+
+                                     </div>
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+                                                 
+                                            <label for="txtAbdomen">Abdomen</label>
+                                            <input type="text" class="form-control" id="txtAbdomen" name="txtAbdomen" placeholder='Abdomen' maxlength="10"  >
+
+                                         </div>
+
+                                     </div>
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+                                            
+                                            <label for="txtCadera">Cadera</label>
+                                            <input type="text" class="form-control" id="txtCadera" name="txtCadera" placeholder='Cadera' maxlength="10" >
+                                              
+                                         </div>
+
+                                     </div>
+
+                 </div>
+                
+                <div class="row contInfoSignosVitales3">
+
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+
+                                               <label for="txtICC">ICC</label>
+                                               <input type="text" class="form-control" id="txtICC" name="txtICC" placeholder="ICC" maxlength="10" >
+
+                                         </div>
+
+
+                                     </div>  
+
+                                      <div class="col-md-3">
+
+                                             <div class="form-group">
+
+                                                   <label for="txtSpO2">SpO2</label>
+                                                   <input type="text" class="form-control" id="txtSpO2" name="txtSpO2" placeholder="SpO2" maxlength="10" >
+
+                                             </div>
+
+                                     </div>
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+                                                 
+                                            <label for="txtGLIC">GLIC</label>
+                                            <input type="text" class="form-control" id="txtGLIC" name="txtGLIC" placeholder="GLIC" maxlength="10" >
+
+                                         </div>
+
+                                     </div>
+
+                                     <div class="col-md-3">
+
+                                         <div class="form-group">
+                                            
+                                            <label for="txtTemperatura">Temp</label>
+                                            <input type="text" class="form-control" id="txtTemperatura" name="txtTemperatura" placeholder="Temp" maxlength="10">
+                                              
+                                         </div>
+
+                                     </div>
+
+                 </div>
+
+
+                 <div class="row contInfoMedicoTratante">
+
+                              <div class="col-xs-12">
+                                   
+                                   <div class="form-group">
+
+                                          <label for="slMedicoTratante">Médico tratante</label>
+                                          <select name="slMedicoTratante" class="form-control" id="slMedicoTratante" ></select>
+
+                                   </div>  
+
+                             </div>
+
+                </div>
+          
 
 
                  <br><br>
@@ -515,76 +697,12 @@
  <br><br>
               
 
-<!-- 
+
                         
                   
-    <div class="form-group col-md-12">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" required>
-    </div>
+   
 
-
-<div class="form-group col-md-12">
-<h5 class="subtitulo" align="center">
-                            <b>
-                                Signos vitales
-                            </b>
-</div>
-
-<div class="col-md-12 form-group">
-                    
-                    <div class="row">
-                     <div class="col-md-2 form-group">
-                        <label for="Peso">Peso</label>
-                        <input type="text" class="form-control" id="pes" name="peso" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        <label for="Talla">Talla</label>
-                        <input type="text" class="form-control" id="ta" name="talla" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        <label for="IMC">IMC</label>
-                        <input type="text" class="form-control" id="indimc" name="imc" required>
-                    </div>
-                    <div class="col-md-2 form-group" id="col_select">
-                        <label for="Tension_Arterial">T/A</label>
-                        <input type="text" class="form-control" id="tenArterial" name="tensionArterial" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        <label for="FC">FC</label>
-                        <input type="text" class="form-control" id="frecuecar" name="fc" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        <label for="FR">FR</label>
-                        <input type="text" class="form-control" id="frecueres" name="fr" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        <label for="Abdomen">Abdomen</label>
-                        <input type="text" class="form-control" id="abdo" name="abdomen" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        <label for="Cadera">Cadera</label>
-                        <input type="text" class="form-control" id="cade" name="cadera" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        <label for="ICC">ICC</label>
-                        <input type="text" class="form-control" id="indicincad" name="icc" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        <label for="SpO2">SpO2</label>
-                        <input type="text" class="form-control" id="oxi" name="oximetria" required>
-                    </div>
-                    <div class="col-md-2 form-group" id="col_select">
-                        <label for="GLIC">GLIC</label>
-                        <input type="text" class="form-control" id="glice" name="glic" required>
-                    </div>
-                    <div class="col-md-2 form-group">
-                        <label for="Temp">Temp</label>
-                        <input type="text" class="form-control" id="tempe" name="temp" required>
-                    </div>
-                    
-                </div>
-</div>
+<!-- 
 
 <div class="col-md-12 form-group">
 	<label for="MedicoTratante">Médico tratante</label>
@@ -621,7 +739,7 @@
 <script src="libreriasJS/jquery.min.js"></script>
   <script src="libreriasJS/bootstrap.min.js"></script>
   <script src="libreriasJS/bootstrapValidator.js"></script>
-  <script src="js/ficha_identificacion.js"></script>
+  <script src="js/ficha_identificacion_view.js"></script>
 
 
 </body>

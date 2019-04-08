@@ -67,7 +67,7 @@ $(document).on('ready',function()
 	               dataType:"json",
 	               success: function(result)
 	               {              
-	               	 
+	               	 console.log(result);
 
 	               	  if(result.error == true){
 
@@ -86,7 +86,7 @@ $(document).on('ready',function()
 
 	               	  	 	if(result.id_tipo_usuario == "3"){
 
-	               	  	 		location.href = 'tabla_ficha_identificacion.php';
+	               	  	 		location.href = 'ficha_identificacion_tabla_view.php';
 	               	  	 	}
 	               	  	 }
 	               	  }
