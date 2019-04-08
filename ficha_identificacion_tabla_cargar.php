@@ -17,7 +17,7 @@ include 'conexion.php';
 													tel_casa as telefono_casa,
 													tel_movil as telefono_movil,
 													concat(usu.nombre,' ',usu.ape_paterno,' ',usu.ape_materno) as medico,
-													'<button  type=''button'' class=''btn btn-primary btn btnFichaPaciente''> <span class=''glyphicon glyphicon-pencil''></span> </button>' as historia
+													'<button  type=''button'' class=''btn btn-primary btn btnFichaPaciente'' > <span class=''glyphicon glyphicon-pencil''></span> </button>' as historia
 												from ficha_identificacion ficha 
 												join pacientes paci on (ficha.num_ficha = paci.num_ficha)
 												join usuarios usu on (ficha.id_medico = usu.id_usuario)

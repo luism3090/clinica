@@ -736,6 +736,27 @@
     </div>
 </footer>
 
+
+<div id="modalAlerta" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Alerta</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnMd">Aceptar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <script src="libreriasJS/jquery.min.js"></script>
   <script src="libreriasJS/bootstrap.min.js"></script>
   <script src="libreriasJS/bootstrapValidator.js"></script>

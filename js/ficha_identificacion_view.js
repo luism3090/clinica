@@ -611,10 +611,10 @@ $(document).on('ready',function()
 
 				e.preventDefault();
 
-				let datosFichaIdentificacion = {
+				let ficha_identificacion = {
 												 fecha_hora_elaboracion: $("#txtFechaHoraElab").val(),
 												 tipo_interrogatorio: $("#slTipoInterrogatorio").val(),
-												 nombre_acompanante: $("#txtNombrePaciente").val(),
+												 nombre_acompanante: $("#txtNombreAcompanante").val(),
 												 ape_paterno_acompanante: $("#txtApePaternoAcompanante").val(),
 												 ape_materno_acompanante: $("#txtApeMaternoAcompanante").val(),
 												 parentesco_acompanante: $("#txtParentescoAcompanante").val(),
@@ -633,21 +633,41 @@ $(document).on('ready',function()
 												 religion: $("#txtReligion").val(),
 												 tel_movil: $("#txtCelular").val(),
 												 tel_casa: $("#txtTelefono").val(),
-												 correo_electronico: $("#txtEmail").val()
+												 correo_electronico: $("#txtEmail").val(),
+												 id_medico: $("#slMedicoTratante").val()
 												}
 
+				let signos_vitales = {
+
+					peso: $("#txtPeso").val(),
+					talla: $("#txtTalla").val(),
+					IMC: $("#txtIMC").val(),
+					tension_arterial: $("#txtTenArterial").val(),
+					FC: $("#txtFrecCardiaca").val(),
+					FR: $("#txtFrecRespiratoria").val(),
+					abdomen: $("#txtAbdomen").val(),
+					cadera: $("#txtCadera").val(),
+					ICC: $("#txtICC").val(),
+					SpO2: $("#txtSpO2").val(),
+					GLIC: $("#txtGLIC").val(),
+					Temperatura: $("#txtTemperatura").val(),
+					num_ficha: '',
+					id_paciente: ''
+
+				}
 
 
-				let datosPaciente = {
 
-					  
+				let pacientes = {
+
+					  id_paciente: $("#txtIdPaciente").val(),
 					  nombre: $("#txtNombrePaciente").val(),
 					  ape_paterno: $("#txtApePaterno").val(),
 					  ape_materno: $("#txtApeMaterno").val(),
 					  genero: $("#slGenero").val(),
 					  fecha_nacimiento: $("#txtFechaNacimiento").val(),
-					  edad: $("#txtEdad").val()
-					  
+					  edad: $("#txtEdad").val(),
+					  num_ficha: ''
 
 				}
 
@@ -658,11 +678,27 @@ $(document).on('ready',function()
 	               {
 		               type: "POST",
 		               url: "ficha_identificacion_guardar.php",
-		               data:{datosFichaIdentificacion:datosFichaIdentificacion,datosPaciente:datosPaciente} ,
+		               data:{ficha_identificacion:ficha_identificacion,pacientes:pacientes,signos_vitales:signos_vitales} ,
 		               async: true,
+		               dataType:"json",
 		               success: function(result)
-		               {              
-		               	  console.log(result);
+		               {            
+
+
+		               	  if(result.error == true)
+		               	  {
+
+	   	  	               	  	 $('#modalAlerta .modal-body').text(result.mensaje);
+	   	  		          	  	 $('#modalAlerta').modal('show');
+
+   	  	               	  }
+   	  	               	  else
+   	  	               	  {
+   	  	               	  	 
+	   	  	               	   $('#modalAlerta .modal-body').text(result.mensaje);
+	   	  		          	   $('#modalAlerta').modal('show');
+	   	  	               	  	 
+   	  	               	  }
 		               },
 		               error:function(result)
 		               {
@@ -671,74 +707,6 @@ $(document).on('ready',function()
 		               }
 	          
 	           });
-
-
-					
-
-				/*
-
-				var datosRelCarrerasMaterias = [];
-
-				$clave_oficial = $("#slCarreras").val();
-				$id_semestre = $("#slSemestres").val();
-
-				$("#tblCarrerasMaterias tbody tr").each(function()
-				{
-
-					var datosCarrerasMaterias = {
-												
-												claveMateria:$(this).attr("data-claveMateria"),
-												creditos_materia:$(this).find("input").eq(0).val().trim(),
-												horas_teoricas:$(this).find("input").eq(1).val().trim(),
-												horas_practicas:$(this).find("input").eq(2).val().trim()
-					
-												}
-
-
-					datosRelCarrerasMaterias.push(datosCarrerasMaterias);
-
-				})
-
-				//console.log(datosRelCarrerasMaterias);
-
-				$.ajax(
-				{
-		          type: "POST",
-		          dataType:"json",
-		          url: base_url+"CarrerasMaterias/guardarCarrerasMaterias",
-		          data: {datosMaterias:datosRelCarrerasMaterias,clave_oficial:$clave_oficial,id_semestre:$id_semestre},
-		          async: true,
-		          success: function(result)
-			          {
-
-			          	if( typeof(result.redirect) == 'undefined')
-	                    {
-	                    	$('#modalAlerta .modal-body').text(result.mensaje);
-	                    	$('#modalAlerta').modal('show');
-	                    	if(result.status == 'OK')
-	                    	{
-	                    		
-	                    		getInfoCarrerasMaterias();
-	                    		$("#btnGuardarCarrerasMaterias").attr('disabled',false); 
-	                    	}
-	                    }
-	                    else
-	                    {
-	                      location.href = result.url;
-	                    }
-		
-			          
-
-			          },
-				   error:function(result)
-					  {
-					  	console.log(result.responseText);
-					  	//$("#error").html(data.responseText); 
-					  }
-		          
-		        });
-
-		        */
 
 		    });
 
@@ -816,5 +784,12 @@ $(document).on('ready',function()
 
 	}
 	cargarSelectMedicoTratante();
+
+	$('#modalAlerta').on('hide.bs.modal', function (e) 
+  	{
+
+  		location.reload();
+  	    
+  	});
 
 });
