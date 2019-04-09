@@ -787,6 +787,7 @@ $(document).on('ready',function()
 
             let signos_vitales = {
 
+              id_signos_vitales:$("#modalFormModificarFichaPaciente .modal-body").attr("data-id_signos_vitales"),
               peso: $("#txtPeso").val(),
               talla: $("#txtTalla").val(),
               IMC: $("#txtIMC").val(),
@@ -814,7 +815,8 @@ $(document).on('ready',function()
                 genero: $("#slGenero").val(),
                 fecha_nacimiento: $("#txtFechaNacimiento").val(),
                 edad: $("#txtEdad").val(),
-                num_ficha:  $("#modalFormModificarFichaPaciente .modal-body").attr("data-num_ficha")
+                num_ficha:  $("#modalFormModificarFichaPaciente .modal-body").attr("data-num_ficha"),
+                id_paciente_ori:  $("#modalFormModificarFichaPaciente .modal-body").attr("data-id_paciente"),
                 
 
             }
@@ -864,9 +866,9 @@ $(document).on('ready',function()
 
   
 
-  $("#btnModificarFicha").on("click",function(){
+  $("#btnCancelarFicha").on("click",function(){
 
-    
+    $('#modalFormModificarFichaPaciente').modal("hide");
 
   });
 
@@ -941,6 +943,13 @@ $(document).on('ready',function()
 
     }
     cargarSelectMedicoTratante();
+
+    $('#modalAlerta').on('hide.bs.modal', function (e) 
+    {
+
+      location.reload();
+        
+    });
 
 
 });

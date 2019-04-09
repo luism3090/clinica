@@ -98,7 +98,8 @@
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content" style='width: 1250px;margin-left: -330px;overflow:auto;height: 820px;'>
+
+    <div class="modal-content" style='width: 1250px;margin-left: -330px;overflow:auto;height: 650px;'>
       <div class="modal-header">
        <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Modificar la ficha de identificación del paciente <strong class='lblPaciente'></strong></h4>
@@ -108,7 +109,7 @@
         <div class="container">
 
 
-              <form id="formModificarFichaIdentificacion" >
+            <form id="formModificarFichaIdentificacion" >
       
     
                   <div class="row contInfoId">
@@ -741,9 +742,13 @@
 
                    <br><br>
 
-                   <center><input type="submit" name="enviar" class='btn btn-primary' value="Modificar" id='btnModificar' ></center>
+                   <center>
+                        <input type="submit" class='btn btn-primary' value="Modificar" id='btnModificarFicha' >
+                        <input type="button"  class='btn btn-secondary' value="Cancelar" id='btnCancelarFicha' >
+                   </center>
+                   <br>
     
-               </form>
+            </form>
 
         </div>
 

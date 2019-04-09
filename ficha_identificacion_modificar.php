@@ -35,6 +35,7 @@ $signos_vitales = $_POST['signos_vitales'];
 
 
  $id_paciente = $paciente["id_paciente"];
+ $id_paciente_ori = $paciente["id_paciente_ori"];
  $nombre = $paciente["nombre"]; 
  $ape_paterno = $paciente["ape_paterno"]; 
  $ape_materno = $paciente["ape_materno"]; 
@@ -42,6 +43,7 @@ $signos_vitales = $_POST['signos_vitales'];
  $fecha_nacimiento = $paciente["fecha_nacimiento"]; 
  $edad = $paciente["edad"]; 
 
+ $id_signos_vitales = $signos_vitales["id_signos_vitales"];
  $peso = $signos_vitales["peso"];
  $talla = $signos_vitales["talla"];
  $IMC = $signos_vitales["IMC"];
@@ -91,14 +93,79 @@ $resul = mysqli_query($conexion,$query);
 if($resul)
 {
 
-	$resultado_query = array(
-									'error'=> false,
-	 								'registros'=> 0,
-									'resultado'=> mysqli_error($conexion),
-									'mensaje'=>'ficha de identificación ha sido modificada correctamente'
-								);
+	 $query = " update pacientes  set 
+ 											 id_paciente = '".$id_paciente."',
+ 											 nombre = '".$nombre."',
+ 											 ape_paterno= '".$ape_paterno."',
+ 											 ape_materno= '".$ape_materno."',
+ 											 genero= '".$genero."',
+ 											 fecha_nacimiento= '".$fecha_nacimiento."',
+ 											 edad= '".$edad."'
+ 								where num_ficha = ".$num_ficha." and id_paciente = '".$id_paciente_ori."' "; 
 
-	echo json_encode($resultado_query);
+
+	$resul = mysqli_query($conexion,$query);
+
+	if($resul)
+	{
+
+		$query = " update signos_vitales set 
+ 											 peso = '".$peso."',
+ 											 talla = '".$talla."',
+ 											 IMC= '".$IMC."',
+ 											 tension_arterial= '".$tension_arterial."',
+ 											 FC= '".$FC."',
+ 											 FR= '".$FR."',
+ 											 abdomen= '".$abdomen."',
+ 											 cadera= '".$cadera."',
+ 											 ICC= '".$ICC."',
+ 											 SpO2= '".$SpO2."',
+ 											 GLIC= '".$GLIC."',
+ 											 Temperatura= '".$Temperatura."'
+ 								where num_ficha = ".$num_ficha." and id_signos_vitales = ".$id_signos_vitales." "; 
+
+
+		$resul = mysqli_query($conexion,$query);
+
+		if($resul)
+		{
+
+			$resultado_query = array(
+											'error'=> false,
+			 								'registros'=> 0,
+											'resultado'=> "Todo OK",
+											'mensaje'=>'La ficha de identificación ha sido modificada correctamente'
+										);
+
+			echo json_encode($resultado_query);
+			
+		}
+		else{
+
+			$resultado_query = array(
+											'error'=> true,
+			 								'registros'=> 0,
+											'resultado'=> mysqli_error($conexion),
+											'mensaje'=>'Ocurrió un error en la base de datos'
+										);
+
+			echo json_encode($resultado_query);
+		}
+
+	}
+	else{
+
+		$resultado_query = array(
+										'error'=> true,
+		 								'registros'=> 0,
+										'resultado'=> mysqli_error($conexion),
+										'mensaje'=>'Ocurrió un error en la base de datos'
+									);
+
+		echo json_encode($resultado_query);
+	}
+
+
 	
 
 }
