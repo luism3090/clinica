@@ -206,7 +206,7 @@ if($resul)
 											'error'=> false,
 			 								'registros'=> 0,
 											'resultado'=> "Numero de ficha creado --> ".$num_ficha,
-											'mensaje'=>'La ficha de identificación del paciente fue creada correctamente'
+											'mensaje'=>'La ficha de identificación del paciente ha sido guardada correctamente'
 										);
 
 							    echo json_encode($resultado_query);
@@ -217,7 +217,7 @@ if($resul)
 											'error'=> true,
 			 								'registros'=> 0,
 											'resultado'=> mysqli_error($conexion),
-											'mensaje'=>'Ocurrió un error en la base de datos'
+											'mensaje'=>'Ocurrió un error a la hora de guardar los datos favor de contactar al programador'
 										);
 
 							    echo json_encode($resultado_query);
@@ -235,7 +235,7 @@ if($resul)
 									'error'=> true,
 	 								'registros'=> 0,
 									'resultado'=> mysqli_error($conexion),
-									'mensaje'=>'Ocurrió un error en la base de datos'
+									'mensaje'=>'Ocurrió un error en la base de datos favor de contactar al programador'
 								);
 
 					    echo json_encode($resultado_query);
@@ -255,7 +255,7 @@ else{
 									'error'=> true,
 	 								'registros'=> 0,
 									'resultado'=> mysqli_error($conexion),
-									'mensaje'=>'Ocurrió un error en la base de datos'
+									'mensaje'=>'Ocurrió un error en la base de datos favor de contactar al programador'
 								);
 
 	echo json_encode($resultado_query);

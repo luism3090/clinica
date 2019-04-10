@@ -12,6 +12,14 @@
    <!--  <link rel="stylesheet" href="css/bootstrap.min.css">-->
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link href="css/fontawesome.min.css" rel="stylesheet">
+ <!--  <link href="css/brands.min.css" rel="stylesheet"> -->
+  <link href="css/solid.min.css" rel="stylesheet">
+
+<!--     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/ficha_identificacion_view.css">
     
 
@@ -47,7 +55,7 @@
 <div align="center">
 
     <h3>Ficha de identificación</h3>
-
+    
 </div>
 <br>
 <br>
@@ -737,7 +745,8 @@
 </footer>
 
 
-<div id="modalAlerta" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
+
+<div id="modalAlertaSuccess" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -747,7 +756,7 @@
         <h4 class="modal-title">Alerta</h4>
       </div>
       <div class="modal-body">
-        
+        <center><p><i class="fas fa-check-circle fa-lg"></i> <label class='mldMsj'></label> </p></center>
       </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnMd">Aceptar</button>
@@ -756,6 +765,47 @@
 
   </div>
 </div>
+
+<div id="modalAlertaWarning" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Alerta</h4>
+      </div>
+      <div class="modal-body">
+        <center><p><i class="fas fa-exclamation-circle fa-lg"></i> <label class='mldMsj'></label> </p></center>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnMd">Aceptar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="modalAlertaError" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Alerta</h4>
+      </div>
+      <div class="modal-body">
+        <center><p><i class="fas fa-times fa-lg"></i> <label class='mldMsj'></label> </p></center>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnMd">Aceptar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 <script src="libreriasJS/jquery.min.js"></script>
   <script src="libreriasJS/bootstrap.min.js"></script>

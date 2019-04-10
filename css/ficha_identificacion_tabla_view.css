@@ -50,3 +50,29 @@
 .navbar-collapse ul .active a{
      text-decoration: underline;
 }
+
+/*icons*/
+
+.fa-check-circle{
+  color:green;
+}
+
+.fa-exclamation-circle{
+  color:orange;
+}
+
+.fa-times{
+  color:red;
+}
+
+.mldMsj{
+  margin: 10px 10px;
+}
+
+
+/*tamano modales*/
+
+.modal-content{
+  width: 115%;
+    margin: 0px -35px;
+}

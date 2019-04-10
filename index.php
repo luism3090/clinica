@@ -33,10 +33,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link href="css/solid.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="css/bootstrap2.min.css"> -->
     
 
-    <title>Login_Usuario</title>
+    <title>Login Usuario</title>
   </head>
   <body>
 
@@ -93,7 +96,8 @@
     </div>
 </div>
 
-<div id="modalAlerta" class="modal fade" role="dialog">
+
+<div id="modalAlertaSuccess" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -103,7 +107,47 @@
         <h4 class="modal-title">Alerta</h4>
       </div>
       <div class="modal-body">
-        
+        <center><p><i class="fas fa-check-circle fa-lg"></i> <label class='mldMsj'></label> </p></center>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnMd">Aceptar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="modalAlertaWarning" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Alerta</h4>
+      </div>
+      <div class="modal-body">
+        <center><p><i class="fas fa-exclamation-circle fa-lg"></i> <label class='mldMsj'></label> </p></center>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnMd">Aceptar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="modalAlertaError" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Alerta</h4>
+      </div>
+      <div class="modal-body">
+        <center><p><i class="fas fa-times fa-lg"></i> <label class='mldMsj'></label> </p></center>
       </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnMd">Aceptar</button>
@@ -134,57 +178,3 @@
 
 </html>
 
-<style type="text/css">
-  .background{
-    height: 100vh;
-  width: 100%;
- text-align: center;
-  position: relative;
-  }
-
-#footer{
-  text-align: center;
-  background-color: rgba( 10, 77, 255, 0.7 );
-}
-
-.formulario{
-  border-radius: 10px ;
-height: 24%;
- margin-top: 125px;
-background-position: relative;
-  
-}
-
-.bg-primary
-{
-    background: #007bff !important;
-    height: 85px;
-}
-
-
-.logo{
-    float: right;
-    margin: 9px;
-}
-
-.navbar-brand{
-    color: white;
-    margin-top: 17px;
-}
-
-.content{
-    margin: -19px;
-}
-
-#footer
-{
-    margin-top: 0px;
-    font-size: 15px;
-}
-
-#footer a
-{
-    color: black;
-}
-
-</style>

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
      <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.min.css">
      <link rel="stylesheet" href="css/ficha_identificacion_tabla_view.css"> 
+          <link href="css/fontawesome.min.css" rel="stylesheet">
+ <!--  <link href="css/brands.min.css" rel="stylesheet"> -->
+  <link href="css/solid.min.css" rel="stylesheet">
 
 
     <title>Inicio_enf</title>
@@ -762,7 +765,7 @@
   </div>
 </div>
 
-<div id="modalAlerta" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
+<div id="modalAlertaSuccess" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -772,15 +775,56 @@
         <h4 class="modal-title">Alerta</h4>
       </div>
       <div class="modal-body">
-        
+        <center><p><i class="fas fa-check-circle fa-lg"></i> <label class='mldMsj'></label> </p></center>
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnModificarFicha">Aceptar</button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnMd">Aceptar</button>
       </div>
     </div>
 
   </div>
 </div>
+
+<div id="modalAlertaWarning" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Alerta</h4>
+      </div>
+      <div class="modal-body">
+        <center><p><i class="fas fa-exclamation-circle fa-lg"></i> <label class='mldMsj'></label> </p></center>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnMd">Aceptar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="modalAlertaError" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Alerta</h4>
+      </div>
+      <div class="modal-body">
+        <center><p><i class="fas fa-times fa-lg"></i> <label class='mldMsj'></label> </p></center>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnMd">Aceptar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
   </body>
 

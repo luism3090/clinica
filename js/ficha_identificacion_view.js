@@ -36,7 +36,63 @@ $(document).on('ready',function()
 		                    stringLength: {
 	                            max: 13,
 	                             message: 'El RFC esta compuesto de solo 13 caractéres'
-	                        }
+	                        },
+                          callback: {
+                           message: 'El RFC no esta disponible',
+                           callback: function(value, validator) {
+                               // Get the selected options
+
+                               var valida = true;
+
+                               var datos = {
+                                              id_paciente_new: $("#txtIdPaciente").val().trim(),
+                                              id_paciente_ori: '-1'
+                                           }
+
+
+                                           $.ajax(
+                                           {
+                                               type: "POST",
+                                               url: "ficha_identificacion_valida_idpaciente.php",
+                                               dataType:"json",
+                                               data: {datos:datos},
+                                                async: false,
+                                               success: function(result)
+                                                   {
+                                                         //console.log(result);
+                                                      
+                                                          if(result.error == true)
+                                                          {
+                                                             $('#modalAlertaError .modal-body .mldMsj').text(result.mensaje);
+                                                             $('#modalAlertaError').modal('show');
+                                                          }
+                                                          else
+                                                          {
+
+                                                            if(result.resultado == 'no_disponible')
+                                                            {
+                                                               valida = false;
+                                                            }
+                                                            else{
+                                                              valida = true;
+                                                            }
+                                                            
+                                                          }
+                                                     
+                                                   },
+                                              error:function(result)
+                                                 {
+                                                   alert("Error");
+                                                  console.log(result.responseText);
+                                                   
+                                                 }
+                                                 
+                                           });
+
+                                           return valida;
+
+                           }
+                       },
 
 		                }
 		            }
@@ -684,19 +740,18 @@ $(document).on('ready',function()
 		               success: function(result)
 		               {            
 
-
 		               	  if(result.error == true)
 		               	  {
 
-	   	  	               	  	 $('#modalAlerta .modal-body').text(result.mensaje);
-	   	  		          	  	 $('#modalAlerta').modal('show');
+	   	  	               	  	$('#modalAlertaError .modal-body .mldMsj').text(result.mensaje);
+		          	  	 		$('#modalAlertaError').modal('show');
 
    	  	               	  }
    	  	               	  else
    	  	               	  {
    	  	               	  	 
-	   	  	               	   $('#modalAlerta .modal-body').text(result.mensaje);
-	   	  		          	   $('#modalAlerta').modal('show');
+	   	  	               	   $('#modalAlertaSuccess .modal-body .mldMsj').text(result.mensaje);
+	   	  		          	   $('#modalAlertaSuccess').modal('show');
 	   	  	               	  	 
    	  	               	  }
 		               },
@@ -785,7 +840,7 @@ $(document).on('ready',function()
 	}
 	cargarSelectMedicoTratante();
 
-	$('#modalAlerta').on('hide.bs.modal', function (e) 
+	$('#modalAlertaSuccess').on('hide.bs.modal', function (e) 
   	{
 
   		location.reload();

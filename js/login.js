@@ -67,20 +67,20 @@ $(document).on('ready',function()
 	               dataType:"json",
 	               success: function(result)
 	               {              
-	               	 console.log(result);
+	               	 
 
 	               	  if(result.error == true){
 
-	               	  	 $('#modalAlerta .modal-body').text(result.mensaje);
-		          	  	 $('#modalAlerta').modal('show');
+	               	  	 $('#modalAlertaError .modal-body .mldMsj').text(result.mensaje);
+		          	  	 $('#modalAlertaError').modal('show');
 
 	               	  }
 	               	  else{
 	               	  	 
 	               	  	  if(result.registros == 0)
 	               	  	 {
-	               	  	 	$('#modalAlerta .modal-body').text(result.mensaje);
-		          	  	 	$('#modalAlerta').modal('show');
+	               	  	 	$('#modalAlertaWarning .modal-body .mldMsj').text(result.mensaje);
+		          	  	 	$('#modalAlertaWarning').modal('show');
 	               	  	 }
 	               	  	 else{
 

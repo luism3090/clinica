@@ -60,7 +60,7 @@ $signos_vitales = $_POST['signos_vitales'];
  
 
 
- $query = " update ficha_identificacion  set 
+ $query = " update ficha_identificacion set 
  											 fecha_hora_elaboracion = '".$fecha_hora_elaboracion."',
  											 tipo_interrogatorio = '".$tipo_interrogatorio."',
  											 nombre_acompanante= '".$nombre_acompanante."',
@@ -146,7 +146,7 @@ if($resul)
 											'error'=> true,
 			 								'registros'=> 0,
 											'resultado'=> mysqli_error($conexion),
-											'mensaje'=>'Ocurrió un error en la base de datos'
+											'mensaje'=>'Ocurrió un error a la hora de moficicar los datos, favor de contactar al programador'
 										);
 
 			echo json_encode($resultado_query);
@@ -159,7 +159,7 @@ if($resul)
 										'error'=> true,
 		 								'registros'=> 0,
 										'resultado'=> mysqli_error($conexion),
-										'mensaje'=>'Ocurrió un error en la base de datos'
+										'mensaje'=>'Ocurrió un error a la hora de moficicar los datos, favor de contactar al programador'
 									);
 
 		echo json_encode($resultado_query);
@@ -175,7 +175,7 @@ else{
 									'error'=> true,
 	 								'registros'=> 0,
 									'resultado'=> mysqli_error($conexion),
-									'mensaje'=>'Ocurrió un error en la base de datos'
+									'mensaje'=>'Ocurrió un error a la hora de moficicar los datos, favor de contactar al programador'
 								);
 
 	echo json_encode($resultado_query);

@@ -12,7 +12,7 @@ $contrasena=$_POST['datos']["contrasena"];
 
 
 //Sentencia SQL para buscar un usuario con esos datos 
-$query = " select * from usuarios where nombre_usuario='".$usuario."' and password='".$contrasena."'"; 
+$query = " select * from usuarios where nombre_usuario ='".$usuario."' and password='".$contrasena."'"; 
 
 //echo $query;
 
@@ -76,7 +76,7 @@ if($resul){
 	 								'error'=> false,
 	 								'registros'=> 0,
 									'resultado'=>'Sin datos',
-									'mensaje'=>'Nombre de usuario o contraseña incorrectos'
+									'mensaje'=>'El nombre de usuario o contraseña son incorrectos'
 								);
 
 	 	echo json_encode($resultado_query);
@@ -92,7 +92,7 @@ else{
 									'error'=> true,
 	 								'registros'=> 0,
 									'resultado'=> mysqli_error($conexion),
-									'mensaje'=>'Ocurrió un error en la base de datos'
+									'mensaje'=>'Ocurrió un error a la hora de ingresar favor de contactar al programador'
 								);
 
 	echo json_encode($resultado_query);
