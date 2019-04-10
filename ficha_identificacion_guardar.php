@@ -179,8 +179,7 @@ if($resul)
 				 											 SpO2,
 				 											 GLIC,
 				 											 Temperatura,
-				 											 num_ficha,
-				 											 id_paciente
+				 											 num_ficha
 				 											) 
 				 											values (null,
 				 													'".$peso."',
@@ -195,8 +194,7 @@ if($resul)
 				 													'".$SpO2."',
 				 													'".$GLIC."',
 				 													'".$Temperatura."',
-				 													".$num_ficha.",
-				 													'".$id_paciente."'
+				 													".$num_ficha."
 				 													)";
 
 

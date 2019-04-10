@@ -48,19 +48,19 @@
 
       <div class="container" style="margin-left:12%;width:78%;" >
                     
-                    <br><br>
+                    
 
                     <center><h3>Pacientes con ficha de identificación</h3> </center>
              
                     <br><br>
 
-                    <div class="row">
+                    <div class="row" style='width: 115%;margin-left: -110px;'  >
 
                          <div class="col-xs-12 ">
 
                               <div class="table-responsive">
 
-                                     <table class="table table-bordered table-hover" id="tblPacientesFicha" cellspacing="0"  width="100%" style="text-align: center;">
+                                     <table class="table table-bordered table-hover" id="tblPacientesFicha" cellspacing="0"  style="text-align: center;width:110% !important">
                                          
                                              <caption style="text-align: center"><h4><strong>Pacientes</strong></h4></caption>
                                          

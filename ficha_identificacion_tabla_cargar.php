@@ -11,7 +11,7 @@ include 'conexion.php';
 													paci.id_paciente as rfc,
 													concat(paci.nombre,' ',paci.ape_paterno,' ',paci.ape_materno) as paciente,
 													edad as edad,
-													fecha_hora_elaboracion as fecha,
+													DATE_FORMAT(fecha_hora_elaboracion,'%d/%m/%Y %H:%i:%s') as fecha,
 													municipio_residencia as municipio,
 													calle_residencia as direccion,
 													tel_casa as telefono_casa,
@@ -21,7 +21,8 @@ include 'conexion.php';
 												from ficha_identificacion ficha 
 												join pacientes paci on (ficha.num_ficha = paci.num_ficha)
 												join usuarios usu on (ficha.id_medico = usu.id_usuario)
-											order by ".$columna." ".$ordenacion." ";
+												join signos_vitales sig on (paci.num_ficha = sig.num_ficha)
+											order by id_signos_vitales desc ";
 
 					
 
@@ -54,7 +55,7 @@ include 'conexion.php';
 														paci.id_paciente as rfc,
 														concat(paci.nombre,' ',paci.ape_paterno,' ',paci.ape_materno) as paciente,
 														edad as edad,
-														fecha_hora_elaboracion as fecha,
+														DATE_FORMAT(fecha_hora_elaboracion,'%d/%m/%Y %H:%i:%s') as fecha,
 														municipio_residencia as municipio,
 														calle_residencia as direccion,
 														tel_casa as telefono_casa,
@@ -64,6 +65,7 @@ include 'conexion.php';
 													from ficha_identificacion ficha 
 													join pacientes paci on (ficha.num_ficha = paci.num_ficha)
 													join usuarios usu on (ficha.id_medico = usu.id_usuario)
+													join signos_vitales sig on (paci.num_ficha = sig.num_ficha)
 												) as mytable
 												where  
 													 ( 
@@ -79,10 +81,13 @@ include 'conexion.php';
 												     ) order by ".$columna." ".$ordenacion." ";
 
 												     	// rfc like '%".$this->db->escape_str($requestData['search']['value'])."%' or  
-					
+						
 
 						// $query = $this->db->query($sqlEstudiantesKardex);
 						$query = mysqli_query($conexion,$sqlPacientesficha); 
+
+
+						
 
 
 						// $totalFiltered = $query->num_rows(); 

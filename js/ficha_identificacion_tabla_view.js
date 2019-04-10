@@ -24,7 +24,7 @@ $(document).on('ready',function()
                     // ,
                     // success:function(d)
                     // {
-                    //   debugger;
+                      
                     //  console.log(d);
                     // }
                   },
@@ -833,7 +833,7 @@ $(document).on('ready',function()
                              dataType:"json",
                              success: function(result)
                              {            
-
+                                console.log(result);
 
                                   if(result.error == true)
                                   {
