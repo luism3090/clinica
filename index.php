@@ -1,35 +1,34 @@
 <?php
-// session_start(); 
 
-//session_unset(); tiene k estar en el boton de salir y redirigirlo al index
+session_start(); 
 
-// if(isset($_SESSION["usuario"]))
-// {
+if(isset($_SESSION["id_tipo_usuario"]))
+{
 
-//    if($_SESSION["usuario"]=='enfermera'){
-//         header("Location: ficha.php");
-//       }
+   if($_SESSION["id_tipo_usuario"]=='3'){
+        header("Location: ficha_identificacion_inicio_view.php");
+      }
       
-//       else if($_SESSION["usuario"]=='medico') {
-//         header("Location: hiscli.php");
-//       }
-//       else if($_SESSION["usuario"]=='admin') {
+      else if($_SESSION["id_tipo_usuario"]=='2') {
+        header("Location: medico_inicio_view.php");
+      }
+      else if($_SESSION["id_tipo_usuario"]=='1') {
 
-//         header("Location: Registro.php"); 
-//       }  
+        header("Location: Registro.php"); 
+      }  
 
   
-// }
+}
 
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="es">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -45,7 +44,7 @@
 
 <nav class="navbar navbar-dark bg-primary">
  
-  <a class="navbar-brand" href="#">Bienvenido al SGECE Clínicas Quirúrgicas de Huatusco</a>
+  <a class="navbar-brand" href="#">SGECE Clínicas Quirúrgicas de Huatusco</a>
   <img class='logo' src = "imagenes/logo.jpg"> 
   </nav>
       

@@ -86,7 +86,11 @@ $(document).on('ready',function()
 
 	               	  	 	if(result.id_tipo_usuario == "3"){
 
-	               	  	 		location.href = 'ficha_identificacion_tabla_view.php';
+	               	  	 		location.href = 'ficha_identificacion_inicio_view.php';
+	               	  	 	}
+	               	  	 	else if(result.id_tipo_usuario == "2"){
+
+	               	  	 		location.href = 'medico_inicio_view.php';
 	               	  	 	}
 	               	  	 }
 	               	  }

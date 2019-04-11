@@ -1,5 +1,8 @@
 <?php
 $conexion = mysqli_connect("localhost", "root", "", "mi_clinica");
+mysqli_set_charset($conexion, "utf8");
+
+// mysqli_query($conexion,"SET CHARACTER SET 'utf8'");
 
 //$mysqli = new mysqli("localhost", "root", "", "mi_clinica");
 

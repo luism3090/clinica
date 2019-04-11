@@ -783,6 +783,33 @@ $(document).on('ready',function()
 
 	});
 
+	$("#navSalir").on("click",function(){
+
+		$.ajax(
+	    {
+	      
+	      type: "POST",
+	      url: "cerrar_sesion.php",
+	      dataType:"json",
+	      data: '',
+	      async: true,
+	        success: function(result)
+	            {
+
+	            	 location.href = 'index.php';
+	              
+	            },
+	       error:function(result)
+	          {
+	           console.log(result);
+	            
+	          }
+	   });
+
+	});
+
+	
+
 
 	function calcularEdad(fecha) {
 	    var hoy = new Date();

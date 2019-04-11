@@ -26,8 +26,8 @@ if($resul){
 		 	while ($row = mysqli_fetch_array($resul)){
 
 
-				$nestedData=array('id_medico' => utf8_encode($row["id_medico"]),
-								  'medico' =>utf8_encode($row["medico"]));
+				$nestedData=array('id_medico' => $row["id_medico"],
+								  'medico' => $row["medico"]);
 
 				$data[] = $nestedData;
 				

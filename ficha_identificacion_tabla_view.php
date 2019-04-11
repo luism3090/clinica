@@ -1,10 +1,21 @@
-<!doctype html>
+<?php
+session_start(); 
+
+if(!isset($_SESSION["id_tipo_usuario"]))
+{
+
+  header("Location: index.php");
+}
+
+?>
+<!DOCTYPE html>
 
 <html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -15,7 +26,7 @@
   <link href="css/solid.min.css" rel="stylesheet">
 
 
-    <title>Inicio_enf</title>
+    <title>Ficha identificación</title>
   </head>
   <body>
 
@@ -28,15 +39,20 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="ficha_identificacion_inicio_view.php">Inicio<span class="sr-only">(current)</span></a>
+      </li>
       <li class="nav-item active">
-        <a class="nav-link" href="ficha_identificacion_tabla_view.php">Inicio<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="ficha_identificacion_tabla_view.php">Ver fichas<span class="sr-only">(current)</span></a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="ficha_identificacion_view.php">Crear ficha <span class="sr-only">(current)</span></a>
       </li>
-      
       <li class="nav-item">
-        <a class="nav-link" href="#" tabindex="-1">Salir</a>
+        <a class="nav-link" id='navSalir' href="#" tabindex="-1">Salir</a>
+      </li>
+      <li class="nav-item" id='navUsuario'>
+        <i class="fas fa-user fa-lg"></i> <?php echo $_SESSION["nombre_usuario"];?>
       </li>
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
@@ -48,6 +64,7 @@
 
 <div>
   
+<img class="logo" src="imagenes/logo.jpg" style='position: absolute;left: 0.5%;top: 6.5%;'>
 
       <div class="container" style="margin-left:12%;width:78%;" >
                     

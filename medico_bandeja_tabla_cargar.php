@@ -1,6 +1,7 @@
 <?php 
 
 include 'conexion.php';
+session_start(); 
 
 		$requestData= $_REQUEST;
 
@@ -16,25 +17,21 @@ include 'conexion.php';
 													calle_residencia as direccion,
 													tel_casa as telefono_casa,
 													tel_movil as telefono_movil,
-													concat(usu.nombre,' ',usu.ape_paterno,' ',usu.ape_materno) as medico,
-													'<button  type=''button'' class=''btn btn-primary btn btnFichaPaciente'' > <span class=''glyphicon glyphicon-pencil''></span> </button>' as historia
-												from ficha_identificacion ficha 
-												join pacientes paci on (ficha.num_ficha = paci.num_ficha)
-												join usuarios usu on (ficha.id_medico = usu.id_usuario)
-												join signos_vitales sig on (paci.num_ficha = sig.num_ficha)
+													concat(usu.nombre,' ',usu.ape_paterno,' ',usu.ape_materno) as enfermera,
+													'<button  type=''button'' class=''btn btn-primary btn btnHistoriaPaciente'' > <span class=''glyphicon glyphicon-pencil''></span> </button>' as historia
+													from ficha_identificacion ficha 
+													join pacientes paci on (ficha.num_ficha = paci.num_ficha)
+													join usuarios usu on (ficha.id_enfermera = usu.id_usuario)
+													join signos_vitales sig on (paci.num_ficha = sig.num_ficha)
+													where ficha.id_medico = ".$_SESSION["id_usuario"]."
 											order by id_signos_vitales desc ";
-
-					
-
-					//$query1 = $this->db->query($sql1,array($id_usuario));
-					//$query = $this->db->query($sqlEstudiantesKardex);
 
 					$query = mysqli_query($conexion,$sqlPacientesficha); 
 
-					//$this->db->query($sql, array(array(3, 6), 'live', 'Rick') );
 
 					$totalData =  mysqli_num_rows($query);
 					$totalFiltered = $totalData;
+
 
 					if( !empty($requestData['search']['value']) ) 
 					{   
@@ -48,24 +45,25 @@ include 'conexion.php';
 												    direccion,
 												    telefono_casa,
 												    telefono_movil,
-												    medico,
+												    enfermera,
 												    historia
 												From(
 													select 
-														paci.id_paciente as rfc,
-														concat(paci.nombre,' ',paci.ape_paterno,' ',paci.ape_materno) as paciente,
-														edad as edad,
-														DATE_FORMAT(fecha_hora_elaboracion,'%d/%m/%Y %H:%i:%s') as fecha,
-														municipio_residencia as municipio,
-														calle_residencia as direccion,
-														tel_casa as telefono_casa,
-														tel_movil as telefono_movil,
-														concat(usu.nombre,' ',usu.ape_paterno,' ',usu.ape_materno) as medico,
-														'<button  type=''button'' class=''btn btn-primary btn btnFichaPaciente''> <span class=''glyphicon glyphicon-pencil''></span> </button>' as historia
+													paci.id_paciente as rfc,
+													concat(paci.nombre,' ',paci.ape_paterno,' ',paci.ape_materno) as paciente,
+													edad as edad,
+													DATE_FORMAT(fecha_hora_elaboracion,'%d/%m/%Y %H:%i:%s') as fecha,
+													municipio_residencia as municipio,
+													calle_residencia as direccion,
+													tel_casa as telefono_casa,
+													tel_movil as telefono_movil,
+													concat(usu.nombre,' ',usu.ape_paterno,' ',usu.ape_materno) as enfermera,
+													'<button  type=''button'' class=''btn btn-primary btn btnHistoriaPaciente'' > <span class=''glyphicon glyphicon-pencil''></span> </button>' as historia
 													from ficha_identificacion ficha 
 													join pacientes paci on (ficha.num_ficha = paci.num_ficha)
-													join usuarios usu on (ficha.id_medico = usu.id_usuario)
+													join usuarios usu on (ficha.id_enfermera = usu.id_usuario)
 													join signos_vitales sig on (paci.num_ficha = sig.num_ficha)
+													where ficha.id_medico = ".$_SESSION["id_usuario"]."
 												) as mytable
 												where  
 													 ( 
@@ -77,11 +75,12 @@ include 'conexion.php';
 														 direccion like '%".$requestData['search']['value']."%' or 
 														 telefono_casa like '%".$requestData['search']['value']."%' or
 														 telefono_movil like '%".$requestData['search']['value']."%' or 
-														 medico like '%".$requestData['search']['value']."%'
+														 enfermera like '%".$requestData['search']['value']."%'
 												     ) order by ".$columna." ".$ordenacion." ";
 
 												     	// rfc like '%".$this->db->escape_str($requestData['search']['value'])."%' or  
 						
+
 
 						// $query = $this->db->query($sqlEstudiantesKardex);
 						$query = mysqli_query($conexion,$sqlPacientesficha); 
@@ -119,7 +118,7 @@ include 'conexion.php';
 													$row["direccion"],
 													$row["telefono_casa"],
 													$row["telefono_movil"],
-													$row["medico"],
+													$row["enfermera"],
 													$row["historia"]
 												 );
 

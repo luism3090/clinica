@@ -1,5 +1,4 @@
 <?php 
-
 include 'conexion.php';
 
 $id_paciente= $_POST['id_paciente'];
@@ -56,10 +55,13 @@ $query = "select
 		where paci.id_paciente = '".$id_paciente."'"; 
 
 
+
 $resul = mysqli_query($conexion,$query); 
 
-if($resul){
 
+
+
+if($resul){
 
 	  $registros = mysqli_num_rows($resul);
 
@@ -115,6 +117,7 @@ if($resul){
 								        'Temperatura' => $row['Temperatura'], 
 		 							);
 		 	}
+
 
 
 	 		  	$resultado_query = array(

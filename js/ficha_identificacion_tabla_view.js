@@ -51,7 +51,7 @@ $(document).on('ready',function()
                {
                  type: "POST",
                  url: "ficha_identificacion_cargar.php",
-                 data:{id_paciente:id_paciente} ,
+                 data:{id_paciente:id_paciente},
                  async: true,
                  dataType:"json",
                  success: function(result)
@@ -896,7 +896,7 @@ $(document).on('ready',function()
                              dataType:"json",
                              success: function(result)
                              {            
-                                console.log(result);
+                                //console.log(result);
 
                                   if(result.error == true)
                                   {
@@ -1021,6 +1021,31 @@ $(document).on('ready',function()
       
         
     });
+
+     $("#navSalir").on("click",function(){
+
+    $.ajax(
+      {
+        
+        type: "POST",
+        url: "cerrar_sesion.php",
+        dataType:"json",
+        data: '',
+        async: true,
+          success: function(result)
+              {
+                
+                location.href = 'index.php';
+                
+              },
+         error:function(result)
+            {
+             console.log(result);
+              
+            }
+     });
+
+  });
 
 
 

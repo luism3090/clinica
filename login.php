@@ -33,6 +33,7 @@ if($resul){
 
 		 		$id_tipo_usuario=$row['id_tipo_usuario'];
 		 		$id_usuario=$row['id_usuario'];
+		 		$nombre_usuario= $row['nombre']." ".$row['ape_paterno']." ".$row['ape_materno'];
 		 	}
 
 
@@ -41,6 +42,8 @@ if($resul){
 
 	 		  $_SESSION["id_tipo_usuario"]=$id_tipo_usuario;
 	 		  $_SESSION["id_usuario"]=$id_usuario;
+	 		  $_SESSION["nombre_usuario"]=$nombre_usuario;
+	 		  
 
 
 	 		  	$resultado_query = array(

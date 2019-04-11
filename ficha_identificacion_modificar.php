@@ -1,12 +1,19 @@
 <?php
+
 include 'conexion.php';
 session_start(); 
+
+ // ini_set('default_charset', 'utf-8');
+ // header("Content-Type: text/html;charset=utf-8"); 
+ // mysql_query("SET NAMES 'utf8'");
+
 
 $ficha = $_POST['ficha_identificacion'];
 $paciente = $_POST['pacientes'];
 $signos_vitales = $_POST['signos_vitales'];
 
- //var_dump($dato1);
+
+
 
  $fecha_hora_elaboracion = $ficha["fecha_hora_elaboracion"]; 
  $tipo_interrogatorio = $ficha["tipo_interrogatorio"]; 
@@ -86,6 +93,13 @@ $signos_vitales = $_POST['signos_vitales'];
  											 id_medico= '".$id_medico."',
  											 id_enfermera ='".$id_enfermera."'
  								where num_ficha = ".$num_ficha." "; 
+
+
+ // echo 'á_é_í_ó_ú';
+
+//  echo $query;
+
+// exit();
 
 
 $resul = mysqli_query($conexion,$query);
