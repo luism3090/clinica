@@ -58,66 +58,66 @@ $(document).on('ready',function()
                  {              
                   
 
-                    if(result.error == false){
+                    if(result.error == false)
+                    {
 
 
-                    $("#modalFormModificarFichaPaciente .modal-body").attr("data-num_ficha",result.datos.num_ficha);
-                    $("#modalFormModificarFichaPaciente .modal-body").attr("data-id_paciente",result.datos.id_paciente);
-                    $("#modalFormModificarFichaPaciente .modal-body").attr("data-id_signos_vitales",result.datos.id_signos_vitales);
+                            $("#modalFormModificarFichaPaciente .modal-body").attr("data-num_ficha",result.datos.num_ficha);
+                            $("#modalFormModificarFichaPaciente .modal-body").attr("data-id_paciente",result.datos.id_paciente);
+                            $("#modalFormModificarFichaPaciente .modal-body").attr("data-id_signos_vitales",result.datos.id_signos_vitales);
 
-                     $('#modalFormModificarFichaPaciente .lblPaciente').text(result.datos.nombre+" "+result.datos.ape_paterno+" "+result.datos.ape_materno);
-                    
-                      $("#txtFechaHoraElab").val(result.datos.fecha_hora_elaboracion.split(" ")[0]);
-                      $("#slTipoInterrogatorio").val(result.datos.tipo_interrogatorio);
-                      $("#txtNombreAcompanante").val(result.datos.nombre_acompanante);
-                      $("#txtApePaternoAcompanante").val(result.datos.ape_paterno_acompanante);
-                      $("#txtApeMaternoAcompanante").val(result.datos.ape_materno_acompanante);
-                      $("#txtParentescoAcompanante").val(result.datos.parentesco_acompanante);
-                      $("#slEdoCivil").val(result.datos.estado_civil);
-                      $("#txtLugarOrigen").val(result.datos.lugar_origen);
-                      $("#txtLocalidadResidencia").val(result.datos.localidad_residencia);
-                      $("#txtMunicipioResidencia").val(result.datos.municipio_residencia);
-                      $("#txtEstadoResidencia").val(result.datos.estado_residencia);
-                      $("#txtColoniaResidencia").val(result.datos.colonia_residencia);
-                      $("#txtCalleResidencia").val(result.datos.calle_residencia);
-                      $("#txtNumeroExterior").val(result.datos.num_exterior);
-                      $("#txtNumeroInterior").val(result.datos.num_interior);
-                      $("#slEscolaridad").val(result.datos.escolaridad);
-                      $("#txtCarrera").val(result.datos.carrera);
-                      $("#txtOcupacion").val(result.datos.ocupacion);
-                      $("#txtReligion").val(result.datos.religion);
-                      $("#txtCelular").val(result.datos.tel_movil);
-                      $("#txtTelefono").val(result.datos.tel_casa);
-                      $("#txtEmail").val(result.datos.correo_electronico);
-                      $("#slMedicoTratante").val(result.datos.id_medico);
-
-
-                       $("#txtPeso").val(result.datos.peso);
-                       $("#txtTalla").val(result.datos.talla);
-                       $("#txtIMC").val(result.datos.IMC);
-                       $("#txtTenArterial").val(result.datos.tension_arterial);
-                       $("#txtFrecCardiaca").val(result.datos.FC);
-                       $("#txtFrecRespiratoria").val(result.datos.FR);
-                       $("#txtAbdomen").val(result.datos.abdomen);
-                       $("#txtCadera").val(result.datos.cadera);
-                       $("#txtICC").val(result.datos.ICC);
-                       $("#txtSpO2").val(result.datos.SpO2);
-                       $("#txtGLIC").val(result.datos.GLIC);
-                       $("#txtTemperatura").val(result.datos.Temperatura);
-                      // num_ficha: '',
-                      // id_paciente: ''
-
-                      $("#txtIdPaciente").val(result.datos.id_paciente);
-                       $("#txtNombrePaciente").val(result.datos.nombre);
-                       $("#txtApePaterno").val(result.datos.ape_paterno);
-                       $("#txtApeMaterno").val(result.datos.ape_materno);
-                       $("#slGenero").val(result.datos.genero);
-                       $("#txtFechaNacimiento").val(result.datos.fecha_nacimiento);
-                       $("#txtEdad").val(result.datos.edad);
+                             $('#modalFormModificarFichaPaciente .lblPaciente').text(result.datos.nombre+" "+result.datos.ape_paterno+" "+result.datos.ape_materno);
+                            
+                              $("#txtFechaHoraElab").val(result.datos.fecha_hora_elaboracion.split(" ")[0]);
+                              $("#slTipoInterrogatorio").val(result.datos.tipo_interrogatorio);
+                              $("#txtNombreAcompanante").val(result.datos.nombre_acompanante);
+                              $("#txtApePaternoAcompanante").val(result.datos.ape_paterno_acompanante);
+                              $("#txtApeMaternoAcompanante").val(result.datos.ape_materno_acompanante);
+                              $("#txtParentescoAcompanante").val(result.datos.parentesco_acompanante);
+                              $("#slEdoCivil").val(result.datos.estado_civil);
+                              $("#txtLugarOrigen").val(result.datos.lugar_origen);
+                              $("#txtLocalidadResidencia").val(result.datos.localidad_residencia);
+                              $("#txtMunicipioResidencia").val(result.datos.municipio_residencia);
+                              $("#txtEstadoResidencia").val(result.datos.estado_residencia);
+                              $("#txtColoniaResidencia").val(result.datos.colonia_residencia);
+                              $("#txtCalleResidencia").val(result.datos.calle_residencia);
+                              $("#txtNumeroExterior").val(result.datos.num_exterior);
+                              $("#txtNumeroInterior").val(result.datos.num_interior);
+                              $("#slEscolaridad").val(result.datos.escolaridad);
+                              $("#txtCarrera").val(result.datos.carrera);
+                              $("#txtOcupacion").val(result.datos.ocupacion);
+                              $("#txtReligion").val(result.datos.religion);
+                              $("#txtCelular").val(result.datos.tel_movil);
+                              $("#txtTelefono").val(result.datos.tel_casa);
+                              $("#txtEmail").val(result.datos.correo_electronico);
+                              $("#slMedicoTratante").val(result.datos.id_medico);
 
 
+                               $("#txtPeso").val(result.datos.peso);
+                               $("#txtTalla").val(result.datos.talla);
+                               $("#txtIMC").val(result.datos.IMC);
+                               $("#txtTenArterial").val(result.datos.tension_arterial);
+                               $("#txtFrecCardiaca").val(result.datos.FC);
+                               $("#txtFrecRespiratoria").val(result.datos.FR);
+                               $("#txtAbdomen").val(result.datos.abdomen);
+                               $("#txtCadera").val(result.datos.cadera);
+                               $("#txtICC").val(result.datos.ICC);
+                               $("#txtSpO2").val(result.datos.SpO2);
+                               $("#txtGLIC").val(result.datos.GLIC);
+                               $("#txtTemperatura").val(result.datos.Temperatura);
+                              // num_ficha: '',
+                              // id_paciente: ''
 
-                     $('#modalFormModificarFichaPaciente').modal('show');
+                              $("#txtIdPaciente").val(result.datos.id_paciente);
+                               $("#txtNombrePaciente").val(result.datos.nombre);
+                               $("#txtApePaterno").val(result.datos.ape_paterno);
+                               $("#txtApeMaterno").val(result.datos.ape_materno);
+                               $("#slGenero").val(result.datos.genero);
+                               $("#txtFechaNacimiento").val(result.datos.fecha_nacimiento);
+                               $("#txtEdad").val(result.datos.edad);
+
+
+                             $('#modalFormModificarFichaPaciente').modal('show');
 
 
                     }
@@ -179,11 +179,17 @@ $(document).on('ready',function()
                         notEmpty: {
                             message: 'Este campo es requerido'
                         },
-                        stringLength: {
-                              max: 13,
-                               message: 'El RFC esta compuesto de 13 caractéres'
-                          }
-                          ,
+                        // stringLength: {
+                        //       max: 13,
+                        //        message: 'El RFC esta compuesto de 13 caractéres'
+                        //   }
+                        //   ,
+                        regexp: {
+                              // regexp: /^([A-Z,Ñ,&]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[A-Z|\d]{3})$/, // RFC CON homoclave
+                              regexp: /^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)$/,  // RFC SIN homoclave
+                              message: 'El RFC no tiene el formato correcto',
+
+                          },
                           callback: {
                            message: 'El RFC no esta disponible',
                            callback: function(value, validator) {
@@ -1007,6 +1013,15 @@ $(document).on('ready',function()
       location.reload();
         
     });
+
+     $('#modalFormModificarFichaPaciente').on('hide.bs.modal', function (e) 
+    {
+
+      $(".modal-content").scrollTop(0);
+      
+        
+    });
+
 
 
 });

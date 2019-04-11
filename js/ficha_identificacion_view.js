@@ -33,9 +33,15 @@ $(document).on('ready',function()
 		                    notEmpty: {
 		                        message: 'Este campo es requerido'
 		                    },
-		                    stringLength: {
-	                            max: 13,
-	                             message: 'El RFC esta compuesto de solo 13 caractéres'
+		                    // stringLength: {
+	                     //        max: 13,
+	                     //         message: 'El RFC esta compuesto de solo 13 caractéres'
+	                     //    },
+		                    regexp: {
+	                            // regexp: /^([A-Z,Ñ,&]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[A-Z|\d]{3})$/, // RFC CON homoclave
+	                            regexp: /^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)$/,  // RFC SIN homoclave
+	                            message: 'El RFC no tiene el formato correcto',
+
 	                        },
                           callback: {
                            message: 'El RFC no esta disponible',
