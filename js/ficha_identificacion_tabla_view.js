@@ -940,8 +940,8 @@ $(document).on('ready',function()
     let edad = calcularEdad($("#txtFechaNacimiento").val());
 
     $("#txtEdad").val(edad);
-    $("#formFichaIdentificacion").bootstrapValidator('validateField', "txtEdad");
-
+    $("#formModificarFichaIdentificacion").bootstrapValidator('revalidateField', "txtEdad");
+    
   });
 
 
@@ -1011,6 +1011,7 @@ $(document).on('ready',function()
     {
 
       location.reload();
+      //tblPacientesFicha.ajax.reload();
         
     });
 
@@ -1021,6 +1022,15 @@ $(document).on('ready',function()
       
         
     });
+
+
+    //   $('#modalAlertaSuccess').on('hide.bs.modal', function (e) 
+    // {
+
+    //    $("body").css("padding-right","0px")
+      
+    // });
+     
 
      $("#navSalir").on("click",function(){
 

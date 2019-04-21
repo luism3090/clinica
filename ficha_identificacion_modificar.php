@@ -68,7 +68,7 @@ $signos_vitales = $_POST['signos_vitales'];
 
 
  $query = " update ficha_identificacion set 
- 											 fecha_hora_elaboracion = '".$fecha_hora_elaboracion."',
+ 											 fecha_hora_elaboracion = NOW(),
  											 tipo_interrogatorio = '".$tipo_interrogatorio."',
  											 nombre_acompanante= '".$nombre_acompanante."',
  											 ape_paterno_acompanante= '".$ape_paterno_acompanante."',
@@ -87,8 +87,8 @@ $signos_vitales = $_POST['signos_vitales'];
  											 carrera= '".$carrera."',
  											 ocupacion= '".$ocupacion."',
  											 religion= '".$religion."',
- 											 tel_movil= ".$tel_movil.",
- 											 tel_casa= ".$tel_casa.",
+ 											 tel_movil= '".$tel_movil."',
+ 											 tel_casa= '".$tel_casa."',
  											 correo_electronico= '".$correo_electronico."',
  											 id_medico= '".$id_medico."',
  											 id_enfermera ='".$id_enfermera."'

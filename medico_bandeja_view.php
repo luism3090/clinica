@@ -118,7 +118,7 @@ body{
 
 <div>
   
-  <img class="logo" src="imagenes/logo.jpg" style='position: absolute;left: 0.5%;top: 6.5%;'>
+  <img class="logo" src="imagenes/logo.jpg" style='position: absolute;left: 0.5%;top: 9.5%;'>
 
 <div class="container" style="margin-left:12%;width:78%;" >
                     
@@ -173,10 +173,10 @@ body{
 
     <!-- Modal content-->
 
-    <div class="modal-content" style='width: 1450px;margin-left:-445px;overflow:auto;height: 650px;'>
+    <div class="modal-content" style='width: 1200px;margin-left:-286px;overflow:auto;height: 650px;'>
       <div class="modal-header">
        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modificar la ficha de identificación del paciente <strong class='lblPaciente'></strong></h4>
+        <h4 class="modal-title">Crear la historia clinica del paciente <strong class='lblPaciente'></strong></h4>
       </div>
       <div class="modal-body" data-num_ficha='' data-id_paciente='' data-id_signos_vitales='' >
 

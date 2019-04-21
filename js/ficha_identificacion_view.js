@@ -744,7 +744,7 @@ $(document).on('ready',function()
 		               async: true,
 		               dataType:"json",
 		               success: function(result)
-		               {            
+		               {      
 
 		               	  if(result.error == true)
 		               	  {
@@ -779,7 +779,7 @@ $(document).on('ready',function()
 		let edad = calcularEdad($("#txtFechaNacimiento").val());
 
 		$("#txtEdad").val(edad);
-		$("#formFichaIdentificacion").bootstrapValidator('validateField', "txtEdad");
+		$("#formFichaIdentificacion").bootstrapValidator('revalidateField', "txtEdad");
 
 	});
 

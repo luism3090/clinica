@@ -64,7 +64,7 @@ if(!isset($_SESSION["id_tipo_usuario"]))
 
 <div>
   
-<img class="logo" src="imagenes/logo.jpg" style='position: absolute;left: 0.5%;top: 6.5%;'>
+<img class="logo" src="imagenes/logo.jpg" style='position: absolute;left: 0.5%;top: 9.5%;'>
 
       <div class="container" style="margin-left:12%;width:78%;" >
                     

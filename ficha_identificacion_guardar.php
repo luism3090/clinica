@@ -57,6 +57,21 @@ $signos_vitales = $_POST['signos_vitales'];
  $num_ficha = $signos_vitales["num_ficha"];
  
 
+if($tel_casa == "")
+{
+	$tel_casa = "null";
+}
+else{
+	$tel_casa = "'".$tel_casa."'";
+}
+
+if($num_interior == "")
+{
+	$num_interior = "null";
+}
+else{
+	$num_interior = "'".$num_interior."'";
+}
 
  $query = " insert into ficha_identificacion 
  											(num_ficha,
@@ -100,18 +115,17 @@ $signos_vitales = $_POST['signos_vitales'];
  													'".$colonia_residencia."',
  													'".$calle_residencia."',
  													'".$num_exterior."',
- 													'".$num_interior."',
+ 													".$num_interior.",
  													'".$escolaridad."',
  													'".$carrera."',
  													'".$ocupacion."',
  													'".$religion."',
- 													".$tel_movil.",
+ 													'".$tel_movil."',
  													".$tel_casa.",
  													'".$correo_electronico."',
  													".$id_medico.",
  													".$id_enfermera."
  													)"; 
-
 
 $resul = mysqli_query($conexion,$query);
 
