@@ -744,7 +744,9 @@ $(document).on('ready',function()
 		               async: true,
 		               dataType:"json",
 		               success: function(result)
-		               {      
+		               {     
+
+		               	   // console.log(result);
 
 		               	  if(result.error == true)
 		               	  {

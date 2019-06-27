@@ -66,134 +66,268 @@ $signos_vitales = $_POST['signos_vitales'];
  $num_ficha = $signos_vitales["num_ficha"];
  
 
+ if($num_interior == "")
+{
+	$num_interior = " num_interior = null ";
+}
+else{
+	$num_interior = " num_interior = '".addslashes($num_interior)."' ";
+}
 
- $query = " update ficha_identificacion set 
- 											 fecha_hora_elaboracion = NOW(),
- 											 tipo_interrogatorio = '".$tipo_interrogatorio."',
- 											 nombre_acompanante= '".$nombre_acompanante."',
- 											 ape_paterno_acompanante= '".$ape_paterno_acompanante."',
- 											 ape_materno_acompanante= '".$ape_materno_acompanante."',
- 											 parentesco_acompanante= '".$parentesco_acompanante."',
- 											 estado_civil= '".$estado_civil."',
- 											 lugar_origen= '".$lugar_origen."',
- 											 localidad_residencia= '".$localidad_residencia."',
- 											 municipio_residencia= '".$municipio_residencia."',
- 											 estado_residencia= '".$estado_residencia."',
- 											 colonia_residencia= '".$colonia_residencia."',
- 											 calle_residencia= '".$calle_residencia."',
- 											 num_exterior= '".$num_exterior."',
- 											 num_interior= '".$num_interior."',
- 											 escolaridad= '".$escolaridad."',
- 											 carrera= '".$carrera."',
- 											 ocupacion= '".$ocupacion."',
- 											 religion= '".$religion."',
- 											 tel_movil= '".$tel_movil."',
- 											 tel_casa= '".$tel_casa."',
- 											 correo_electronico= '".$correo_electronico."',
- 											 id_medico= '".$id_medico."',
- 											 id_enfermera ='".$id_enfermera."'
- 								where num_ficha = ".$num_ficha." "; 
+ if($tel_casa == "")
+{
+	$tel_casa = " tel_casa = null ";
+}
+else{
+	$tel_casa = " tel_casa= ".addslashes($tel_casa)." ";
+}
 
 
- // echo 'á_é_í_ó_ú';
-
-//  echo $query;
-
-// exit();
-
-
-$resul = mysqli_query($conexion,$query);
-
-if($resul)
+try
 {
 
-	 $query = " update pacientes  set 
- 											 id_paciente = '".$id_paciente."',
- 											 nombre = '".$nombre."',
- 											 ape_paterno= '".$ape_paterno."',
- 											 ape_materno= '".$ape_materno."',
- 											 genero= '".$genero."',
- 											 fecha_nacimiento= '".$fecha_nacimiento."',
- 											 edad= '".$edad."'
- 								where num_ficha = ".$num_ficha." and id_paciente = '".$id_paciente_ori."' "; 
+		// inicializando la transacción 
+
+		//mysqli_begin_transaction($conexion, MYSQLI_TRANS_START_READ_WRITE);
 
 
-	$resul = mysqli_query($conexion,$query);
+		// actualizando datos de la tabla de ficha_identificacion
 
-	if($resul)
-	{
+		$query = " update ficha_identificacion set 
+ 											 fecha_hora_elaboracion = NOW(),
+ 											 tipo_interrogatorio = '".addslashes($tipo_interrogatorio)."',
+ 											 nombre_acompanante= '".addslashes($nombre_acompanante)."',
+ 											 ape_paterno_acompanante= '".addslashes($ape_paterno_acompanante)."',
+ 											 ape_materno_acompanante= '".addslashes($ape_materno_acompanante)."',
+ 											 parentesco_acompanante= '".addslashes($parentesco_acompanante)."',
+ 											 estado_civil= '".addslashes($estado_civil)."',
+ 											 lugar_origen= '".addslashes($lugar_origen)."',
+ 											 localidad_residencia= '".addslashes($localidad_residencia)."',
+ 											 municipio_residencia= '".addslashes($municipio_residencia)."',
+ 											 estado_residencia= '".addslashes($estado_residencia)."',
+ 											 colonia_residencia= '".addslashes($colonia_residencia)."',
+ 											 calle_residencia= '".addslashes($calle_residencia)."',
+ 											 num_exterior= '".addslashes($num_exterior)."',
+ 											 ".$num_interior.",
+ 											 escolaridad= '".addslashes($escolaridad)."',
+ 											 carrera= '".addslashes($carrera)."',
+ 											 ocupacion= '".addslashes($ocupacion)."',
+ 											 religion= '".addslashes($religion)."',
+ 											 tel_movil= '".addslashes($tel_movil)."',
+ 											 ".$tel_casa.",
+ 											 correo_electronico= '".addslashes($correo_electronico)."',
+ 											 id_medico= '".addslashes($id_medico)."',
+ 											 id_enfermera ='".addslashes($id_enfermera)."'
+ 								where num_ficha = ".addslashes($num_ficha)." "; 
 
-		$query = " update signos_vitales set 
- 											 peso = '".$peso."',
- 											 talla = '".$talla."',
- 											 IMC= '".$IMC."',
- 											 tension_arterial= '".$tension_arterial."',
- 											 FC= '".$FC."',
- 											 FR= '".$FR."',
- 											 abdomen= '".$abdomen."',
- 											 cadera= '".$cadera."',
- 											 ICC= '".$ICC."',
- 											 SpO2= '".$SpO2."',
- 											 GLIC= '".$GLIC."',
- 											 Temperatura= '".$Temperatura."'
- 								where num_ficha = ".$num_ficha." and id_signos_vitales = ".$id_signos_vitales." "; 
+
+ 		$resul = mysqli_query($conexion,$query);
+
+		if($resul==false)
+	    {
+	    	$msjError = mysqli_error($conexion);
+	        throw new Exception();
+	    }
+
+
+	    // actualizando datos de la tabla de pacientes
+
+	    $query = " update pacientes set 
+ 											 id_paciente = '".addslashes($id_paciente)."',
+ 											 nombre = '".addslashes($nombre)."',
+ 											 ape_paterno= '".addslashes($ape_paterno)."',
+ 											 ape_materno= '".addslashes($ape_materno)."',
+ 											 genero= '".addslashes($genero)."',
+ 											 fecha_nacimiento= '".addslashes($fecha_nacimiento)."',
+ 											 edad= '".addslashes($edad)."'
+ 								where num_ficha = ".addslashes($num_ficha)." and id_paciente = '".addslashes($id_paciente_ori)."' "; 
 
 
 		$resul = mysqli_query($conexion,$query);
 
-		if($resul)
-		{
+		if($resul==false)
+	    {
+	    	$msjError = mysqli_error($conexion);
+	        throw new Exception();
+	    }
 
-			$resultado_query = array(
+
+	    $query = " update signos_vitales set 
+ 											 peso = '".addslashes($peso)."',
+ 											 talla = '".addslashes($talla)."',
+ 											 IMC= '".addslashes($IMC)."',
+ 											 tension_arterial= '".addslashes($tension_arterial)."',
+ 											 FC= '".addslashes($FC)."',
+ 											 FR= '".addslashes($FR)."',
+ 											 abdomen= '".addslashes($abdomen)."',
+ 											 cadera= '".addslashes($cadera)."',
+ 											 ICC= '".addslashes($ICC)."',
+ 											 SpO2= '".addslashes($SpO2)."',
+ 											 GLIC= '".addslashes($GLIC)."',
+ 											 Temperatura= '".addslashes($Temperatura)."'
+ 								where num_ficha = ".addslashes($num_ficha)." and id_signos_vitales = ".addslashes($id_signos_vitales)." "; 
+
+		$resul = mysqli_query($conexion,$query);
+
+		if($resul==false)
+	    {
+	    	$msjError = mysqli_error($conexion);
+	        throw new Exception();
+	    }
+
+
+	    // ejecutando el commit de las consultas mysql
+		//mysqli_commit($conexion); 
+
+
+		$resultado_query = array(
 											'error'=> false,
 			 								'registros'=> 0,
 											'resultado'=> "Todo OK",
 											'mensaje'=>'La ficha de identificación ha sido modificada correctamente'
 										);
 
-			echo json_encode($resultado_query);
-			
-		}
-		else{
+		echo json_encode($resultado_query);
 
-			$resultado_query = array(
-											'error'=> true,
-			 								'registros'=> 0,
-											'resultado'=> mysqli_error($conexion),
-											'mensaje'=>'Ocurrió un error a la hora de moficicar los datos, favor de contactar al programador'
-										);
+}
+catch(Exception $e){
 
-			echo json_encode($resultado_query);
-		}
+	
+		// ejecutando el rollback de las consultas mysql
 
-	}
-	else{
+		//mysqli_rollback($conexion); 
 
 		$resultado_query = array(
 										'error'=> true,
 		 								'registros'=> 0,
-										'resultado'=> mysqli_error($conexion),
+										'resultado'=> $msjError,
 										'mensaje'=>'Ocurrió un error a la hora de moficicar los datos, favor de contactar al programador'
 									);
 
 		echo json_encode($resultado_query);
-	}
 
-
-	
 
 }
-else{
 
-	$resultado_query = array(
-									'error'=> true,
-	 								'registros'=> 0,
-									'resultado'=> mysqli_error($conexion),
-									'mensaje'=>'Ocurrió un error a la hora de moficicar los datos, favor de contactar al programador'
-								);
+exit();
 
-	echo json_encode($resultado_query);
-}
+
+ // 	$query = " update ficha_identificacion set 
+ // 											 fecha_hora_elaboracion = NOW(),
+ // 											 tipo_interrogatorio = '".$tipo_interrogatorio."',
+ // 											 nombre_acompanante= '".$nombre_acompanante."',
+ // 											 ape_paterno_acompanante= '".$ape_paterno_acompanante."',
+ // 											 ape_materno_acompanante= '".$ape_materno_acompanante."',
+ // 											 parentesco_acompanante= '".$parentesco_acompanante."',
+ // 											 estado_civil= '".$estado_civil."',
+ // 											 lugar_origen= '".$lugar_origen."',
+ // 											 localidad_residencia= '".$localidad_residencia."',
+ // 											 municipio_residencia= '".$municipio_residencia."',
+ // 											 estado_residencia= '".$estado_residencia."',
+ // 											 colonia_residencia= '".$colonia_residencia."',
+ // 											 calle_residencia= '".$calle_residencia."',
+ // 											 num_exterior= '".$num_exterior."',
+ // 											 num_interior= '".$num_interior."',
+ // 											 escolaridad= '".$escolaridad."',
+ // 											 carrera= '".$carrera."',
+ // 											 ocupacion= '".$ocupacion."',
+ // 											 religion= '".$religion."',
+ // 											 tel_movil= '".$tel_movil."',
+ // 											 tel_casa= '".$tel_casa."',
+ // 											 correo_electronico= '".$correo_electronico."',
+ // 											 id_medico= '".$id_medico."',
+ // 											 id_enfermera ='".$id_enfermera."'
+ // 								where num_ficha = ".$num_ficha." "; 
+
+
+	// $resul = mysqli_query($conexion,$query);
+
+	// if($resul)
+	// {
+
+	// 		 $query = " update pacientes  set 
+	// 	 											 id_paciente = '".$id_paciente."',
+	// 	 											 nombre = '".$nombre."',
+	// 	 											 ape_paterno= '".$ape_paterno."',
+	// 	 											 ape_materno= '".$ape_materno."',
+	// 	 											 genero= '".$genero."',
+	// 	 											 fecha_nacimiento= '".$fecha_nacimiento."',
+	// 	 											 edad= '".$edad."'
+	// 	 								where num_ficha = ".$num_ficha." and id_paciente = '".$id_paciente_ori."' "; 
+
+
+	// 		$resul = mysqli_query($conexion,$query);
+
+	// 		if($resul)
+	// 		{
+
+	// 			$query = " update signos_vitales set 
+	// 	 											 peso = '".$peso."',
+	// 	 											 talla = '".$talla."',
+	// 	 											 IMC= '".$IMC."',
+	// 	 											 tension_arterial= '".$tension_arterial."',
+	// 	 											 FC= '".$FC."',
+	// 	 											 FR= '".$FR."',
+	// 	 											 abdomen= '".$abdomen."',
+	// 	 											 cadera= '".$cadera."',
+	// 	 											 ICC= '".$ICC."',
+	// 	 											 SpO2= '".$SpO2."',
+	// 	 											 GLIC= '".$GLIC."',
+	// 	 											 Temperatura= '".$Temperatura."'
+	// 	 								where num_ficha = ".$num_ficha." and id_signos_vitales = ".$id_signos_vitales." "; 
+
+	// 			$resul = mysqli_query($conexion,$query);
+
+	// 			if($resul)
+	// 			{
+
+	// 				$resultado_query = array(
+	// 												'error'=> false,
+	// 				 								'registros'=> 0,
+	// 												'resultado'=> "Todo OK",
+	// 												'mensaje'=>'La ficha de identificación ha sido modificada correctamente'
+	// 											);
+
+	// 				echo json_encode($resultado_query);
+					
+	// 			}
+	// 			else{
+
+	// 				$resultado_query = array(
+	// 												'error'=> true,
+	// 				 								'registros'=> 0,
+	// 												'resultado'=> mysqli_error($conexion),
+	// 												'mensaje'=>'Ocurrió un error a la hora de moficicar los datos, favor de contactar al programador'
+	// 											);
+
+	// 				echo json_encode($resultado_query);
+	// 			}
+
+	// 		}
+	// 		else{
+
+	// 			$resultado_query = array(
+	// 											'error'=> true,
+	// 			 								'registros'=> 0,
+	// 											'resultado'=> mysqli_error($conexion),
+	// 											'mensaje'=>'Ocurrió un error a la hora de moficicar los datos, favor de contactar al programador'
+	// 										);
+
+	// 			echo json_encode($resultado_query);
+	// 		}
+
+	// }
+	// else{
+
+	// 	$resultado_query = array(
+	// 									'error'=> true,
+	// 	 								'registros'=> 0,
+	// 									'resultado'=> mysqli_error($conexion),
+	// 									'mensaje'=>'Ocurrió un error a la hora de moficicar los datos, favor de contactar al programador'
+	// 								);
+
+	// 	echo json_encode($resultado_query);
+	// }
 
 
 
